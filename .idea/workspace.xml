@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="sprint 4">
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/myDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.mv.db" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/BuenSabor_BackEnd">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2W1yz1oN40W1v4vOzaTdvStGEvX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Gonza/OneDrive/UTN/3º/Segundo Semestre/Desarrollo de Software/BackEnd/Trabajo Practico API/Api con Paginacion",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="BuenSabor_BackEnd" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="BuenSabor_BackEnd" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Gonza\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="" />
+      <created>1695914639928</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695914639928</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Modificacion entidades">
+      <option name="closed" value="true" />
+      <created>1695927573733</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695927573733</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Modificacion entidades">
+      <option name="closed" value="true" />
+      <created>1695927599069</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695927599069</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Harcodeo en el main para verificar funcionamiento">
+      <option name="closed" value="true" />
+      <created>1696112756534</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696112756534</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Modificaciones en el main">
+      <option name="closed" value="true" />
+      <created>1696174725472</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696174725472</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Modificacion final en el main para Sprint 3">
+      <option name="closed" value="true" />
+      <created>1696258741841</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696258741841</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Modificacion final en el main para Sprint 3">
+      <option name="closed" value="true" />
+      <created>1696258804771</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696258804771</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Modificacion final en el main para Sprint 3">
+      <option name="closed" value="true" />
+      <created>1696258929268</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696258929268</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Sprint 3">
+      <option name="closed" value="true" />
+      <created>1696438147618</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696438147618</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Sprint 3">
+      <option name="closed" value="true" />
+      <created>1696438390409</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696438390409</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Sprint 3">
+      <option name="closed" value="true" />
+      <created>1696438671661</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696438671661</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Sprint 3">
+      <option name="closed" value="true" />
+      <created>1696438999212</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696438999212</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Sprint 3">
+      <option name="closed" value="true" />
+      <created>1696439142827</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696439142827</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Sprint 3">
+      <option name="closed" value="true" />
+      <created>1696439146942</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696439146942</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Sprint 3">
+      <option name="closed" value="true" />
+      <created>1696439369212</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696439369212</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Creacion de clases DetalleFactura">
+      <option name="closed" value="true" />
+      <created>1696518119751</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1696518119751</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Creacion de clases DetalleFactura">
+      <option name="closed" value="true" />
+      <created>1696518154439</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1696518154439</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Capas Service y Controller">
+      <option name="closed" value="true" />
+      <created>1697129953189</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1697129953189</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Capas Service y Controller">
+      <option name="closed" value="true" />
+      <created>1697129985814</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1697129985814</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Capas Service y Controller">
+      <option name="closed" value="true" />
+      <created>1697215874108</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1697215874108</updated>
+    </task>
+    <task id="LOCAL-00020" summary="sprint 4">
+      <option name="closed" value="true" />
+      <created>1697554121599</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1697554121599</updated>
+    </task>
+    <task id="LOCAL-00021" summary="sprint 4">
+      <option name="closed" value="true" />
+      <created>1697556067266</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1697556067266</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Modificacion entidades" />
+    <MESSAGE value="Harcodeo en el main para verificar funcionamiento" />
+    <MESSAGE value="Modificaciones en el main" />
+    <MESSAGE value="Modificacion final en el main para Sprint 3" />
+    <MESSAGE value="Sprint 3" />
+    <MESSAGE value="Creacion de clases DetalleFactura" />
+    <MESSAGE value="Capas Service y Controller" />
+    <MESSAGE value="sprint 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="sprint 4" />
+  </component>
+</project>

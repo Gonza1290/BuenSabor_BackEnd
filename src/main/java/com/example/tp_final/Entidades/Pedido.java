@@ -42,6 +42,10 @@ public class Pedido extends Base {
     @Enumerated(EnumType.STRING)
     private TipoEnvio tipoEnvio;
 
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private FormaPago formaPago;
+
     //Relacion N a 1 con la clase Cliente
     @NotNull
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
@@ -56,32 +60,5 @@ public class Pedido extends Base {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<DetallePedido> detallesPedido = new ArrayList<>();
 
-
-    public Factura emitirFactura (FormaPago formaPago){
-        List<DetalleFactura> detallesFactura = new ArrayList<>();
-        for (DetallePedido detallePedido:detallesPedido) {
-            DetalleFactura detalleFactura = new DetalleFactura();
-            detalleFactura.setCantidad(detallePedido.getCantidad());
-            detalleFactura.setArticulo(detallePedido.getArticulo());
-        }
-        Factura factura = new Factura(formaPago,detallesFactura);
-        //Si el tipo envio es retira entonces se aplica un 10% de descuento
-        if (this.tipoEnvio.name()=="retira") {
-            factura.setDescuento(0.1);
-        }else {
-            factura.setDescuento(0);
-        }
-        factura.setTotalFinal(this.total -this.total * factura.getDescuento());
-        return factura;
-    }
-
-    public double calcularTotal() {
-        double Total = 0;
-        // Calcular el total del pedido con la suma de los subtotales de los detalles pedido
-        for (DetallePedido detalleP : detallesPedido) {
-            Total += detalleP.getSubtotal();
-        }
-        return Total;
-    }
 
 }

@@ -23,16 +23,5 @@ public class DetallePedido extends Base {
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Articulo articulo;
 
-    //Constructor
-    public DetallePedido(int cantidad, Articulo articulo) {
-        this.cantidad = cantidad;
-        this.articulo = articulo;
-        this.subtotal= calcularSubTotal();
-    }
-    //Metodos
-    public double calcularSubTotal (){
-        double subtotal = this.articulo.getPrecioVenta() * cantidad;
-        return subtotal;
-    }
 }
 

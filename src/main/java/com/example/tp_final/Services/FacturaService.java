@@ -1,6 +1,5 @@
 package com.example.tp_final.Services;
 
-import com.example.tp_final.Entidades.Empleado;
 import com.example.tp_final.Entidades.Factura;
 import com.example.tp_final.Repositories.BaseRepository;
 import com.example.tp_final.Repositories.FacturaRepository;

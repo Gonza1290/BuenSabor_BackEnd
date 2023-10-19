@@ -1,6 +1,5 @@
 package com.example.tp_final.Entidades;
 
-import com.example.tp_final.Enumeraciones.Estado;
 import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -11,19 +10,27 @@ import java.util.List;
 
 @Entity
 @Table(name="Cliente")
-@NoArgsConstructor
-@Setter
 @Getter
-@PrimaryKeyJoinColumn(referencedColumnName = "id")
-public class Cliente extends Usuario {
-    private String comentario;
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Cliente extends BaseWithDate implements Serializable {
 
-    //@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    //private List<Pedido> Pedidos = new ArrayList<>();
+    @NotNull
+    private String nombre;
+    @NotNull
+    private String apellido;
+    @NotNull
+    private String telefono;
+    @NotNull
+    private String email;
 
-    //Constructor
-    public Cliente(String nombre, String apellido, String telefono, String email, String password, Estado estadoUsuario) {
-        super(nombre, apellido, telefono, email, password, estadoUsuario);
-    }
+    //Relacion 1 a 1 con la clase Usuario
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Usuario usuario;
+
+    //Relacion 1 a N con domicilio
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Domicilio> domicilios = new ArrayList<>();
 
 }

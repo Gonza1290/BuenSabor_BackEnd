@@ -56,17 +56,6 @@ public class Pedido extends Base {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<DetallePedido> detallesPedido = new ArrayList<>();
 
-    //Constructor
-    public Pedido(Pagado pagado, EstadoPedido estadoPedido, TipoEnvio tipoEnvio, Cliente cliente, List<DetallePedido> detallesPedido, FormaPago formaPago) {
-        this.fechaPedido = LocalDateTime.now();
-        this.pagado = pagado;
-        this.estadoPedido = estadoPedido;
-        this.tipoEnvio = tipoEnvio;
-        this.cliente = cliente;
-        this.detallesPedido = detallesPedido;
-        this.total = calcularTotal();
-        this.factura = emitirFactura(formaPago);
-    }
 
     public Factura emitirFactura (FormaPago formaPago){
         List<DetalleFactura> detallesFactura = new ArrayList<>();

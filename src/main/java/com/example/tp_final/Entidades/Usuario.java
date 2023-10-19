@@ -15,32 +15,12 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@Inheritance(strategy = InheritanceType.JOINED)
+@AllArgsConstructor
 
-public abstract class Usuario extends BaseWithDate implements Serializable {
-
-    @NotNull
-    private String nombre;
-    @NotNull
-    private String apellido;
-    @NotNull
-    private String telefono;
-    @NotNull
-    private String email;
-    @NotNull
-    private String password;
+public class Usuario extends BaseWithDate implements Serializable {
 
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private Estado estadoUsuario;
-
-    //Constructor
-    public Usuario(String nombre, String apellido, String telefono, String email, String password, Estado estadoUsuario) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.email = email;
-        this.password = password;
-        this.estadoUsuario = estadoUsuario;
-    }
+    private String authId;
+    @NotNull
+    private String username;
 }

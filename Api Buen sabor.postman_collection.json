@@ -1,0 +1,1533 @@
+{
+	"info": {
+		"_postman_id": "29f4a7f7-843e-4103-92af-75587a1c8afb",
+		"name": "Api Buen sabor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30226984"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empleado",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Matias\",\r\n    \"apellido\": \"Morales\",\r\n    \"telefono\": \"2612463645\",\r\n    \"email\": \"MatiasMorales@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"estadoUsuario\": \"Alta\",\r\n    \"rol\": \"CAJERO\"\r\n    \r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Articulo Insumo",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Pepsi\",\r\n    \"descripcion\": \"descripcion\",\r\n    \"Url_Imagen\": \"urlImagen..\",\r\n    \"precioVenta\": 1200.00,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 1,\r\n        \"fechaAlta\": null,\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"denominacion\": \"Gaseosas\",\r\n        \"estadoRubro\": \"Alta\",\r\n        \"tipoRubro\": \"insumo\"\r\n    },\r\n    \"precioCompra\": 800.00,\r\n    \"stockActual\": 1,\r\n    \"stockMinimo\": 1,\r\n    \"unidadMedida\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"litro\",\r\n        \"abreviatura\": \"l\"\r\n    }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Articulo Manufacturado",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Pizza Mozzarella\",\r\n    \"descripcion\": \"descripcion..\",\r\n    \"Url_Imagen\": \"123456789\",\r\n    \"precioVenta\": 1500,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 1,\r\n        \"fechaAlta\": null,\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"denominacion\": \"Gaseosas\",\r\n        \"estadoRubro\": \"Alta\",\r\n        \"tipoRubro\": \"insumo\"\r\n    },\r\n    \"tiempoEstimadoCocina\": 25,\r\n    \"receta\": \"receta...\",\r\n    \"detallesArtManufacturado\": [\r\n        {\r\n            \"cantidad\": 2,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 1,\r\n                \"fechaAlta\": null,\r\n                \"fechaBaja\": null,\r\n                \"fechaModificacion\": null,\r\n                \"denominacion\": \"Pepsi\",\r\n                \"descripcion\": \"descripcion\",\r\n                \"precioVenta\": 1200.0,\r\n                \"estadoArticulo\": \"Alta\",\r\n                \"rubro\": {\r\n                    \"id\": 1,\r\n                    \"fechaAlta\": null,\r\n                    \"fechaBaja\": null,\r\n                    \"fechaModificacion\": null,\r\n                    \"denominacion\": \"Gaseosas\",\r\n                    \"estadoRubro\": \"Alta\",\r\n                    \"tipoRubro\": \"insumo\"\r\n                },\r\n                \"precioCompra\": 800.0,\r\n                \"stockActual\": 1,\r\n                \"stockMinimo\": 1,\r\n                \"unidadMedida\": {\r\n                    \"id\": 1,\r\n                    \"denominacion\": \"litro\",\r\n                    \"abreviatura\": \"l\"\r\n                },\r\n                \"url_Imagen\": null\r\n        }\r\n        }\r\n    ]\r\n    \r\n    \r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Domicilio",
+			"item": [
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero\": \"234\",\r\n    \"calle\": \"Belgrano\",\r\n    \"codigoPostal\": \"5534\",\r\n    \"nroDpt\": \"2\",\r\n    \"pisoDto\": \"1\",\r\n    \"localidad\": \"Ciudad\",\r\n    \"usuario\": {\r\n        \"id\": 1,\r\n        \"fechaAlta\": null,\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"nombre\": \"Dalia\",\r\n        \"apellido\": \"Adam\",\r\n        \"telefono\": \"123456789\",\r\n        \"email\": \"DaliaAdam@gmail.com\",\r\n        \"password\": \"password\",\r\n        \"estadoUsuario\": \"Alta\",\r\n        \"comentario\": \"Comentario del Cliente\"\r\n    }\r\n    \r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rubro",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Gaseosas\",\r\n    \"estadoRubro\": \"Alta\",\r\n    \"tipoRubro\": \"insumo\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unidad Medida",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"litro\",\r\n    \"abreviatura\": \"l\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Factura",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Gaseosas\",\r\n    \"estadoRubro\": \"Alta\",\r\n    \"tipoRubro\": \"insumo\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pagado\": \"Si\",\r\n    \"estadoPedido\": \"A_Confirmar\",\r\n    \"tipoEnvio\": \"retira\",\r\n    \"cliente\": {\r\n        \"id\": 1,\r\n        \"fechaAlta\": null,\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"nombre\": \"Dalia\",\r\n        \"apellido\": \"Adam\",\r\n        \"telefono\": \"123456789\",\r\n        \"email\": \"DaliaAdam@gmail.com\",\r\n        \"password\": \"password\",\r\n        \"estadoUsuario\": \"Alta\",\r\n        \"comentario\": \"Comentario del Cliente\"\r\n    },\r\n    \"detallesPedido\": [\r\n        {\r\n            \"cantidad\": 2,\r\n            \"articulo\": \"Adam\"\r\n        }\r\n    ],\r\n    \"formaPago\": \"efectivo\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

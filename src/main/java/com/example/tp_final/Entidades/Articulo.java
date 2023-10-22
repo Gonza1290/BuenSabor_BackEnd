@@ -11,7 +11,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.io.Serializable;
 
 @Entity
-@Table(name="Articulos")
+@Table(name="Articulo")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -31,7 +31,7 @@ public abstract class Articulo extends BaseWithDate {
 
     //Relacion N a 1 con la clase Rubro
     @NotNull
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private Rubro rubro;
 
 }

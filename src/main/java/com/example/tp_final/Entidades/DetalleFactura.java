@@ -17,7 +17,7 @@ public class DetalleFactura extends Base  {
     private double subtotal;
 
     //Relacion N a 1 con la clase articulo
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private Articulo articulo;
 
 }

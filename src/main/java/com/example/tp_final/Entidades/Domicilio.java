@@ -20,7 +20,7 @@ public class Domicilio extends Base {
     private String pisoDto;
 
     //Relacion N a 1 con la clase Localidad
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private Localidad localidad;
 
 }

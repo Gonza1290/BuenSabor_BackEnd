@@ -28,7 +28,9 @@ public class Pedido extends Base {
 
     private LocalDateTime fechaPedido;
     private LocalTime horaEstimadaEntrega;
+    private int horaEstimadaPreparacion;
     private double total;
+    private double totalCosto;
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -48,9 +50,14 @@ public class Pedido extends Base {
 
     //Relacion N a 1 con la clase Cliente
     @NotNull
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
+
+    //Relacion N a 1 con la clase domicilio
+    @NotNull
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    private Domicilio domicilio;
 
     //Relacion 1 a 1 con la clase Factura
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

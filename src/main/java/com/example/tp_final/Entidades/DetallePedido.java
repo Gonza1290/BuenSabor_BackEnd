@@ -20,8 +20,10 @@ public class DetallePedido extends Base {
     private double subtotal;
 
     //Relacion N a 1 con la clase articulo
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    private Articulo articulo;
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    private ArticuloInsumo articuloInsumo;
 
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    private ArticuloManufacturado articuloManufacturado;
 }
 

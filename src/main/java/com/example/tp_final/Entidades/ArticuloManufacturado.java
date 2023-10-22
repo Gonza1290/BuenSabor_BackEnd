@@ -27,25 +27,4 @@ public class ArticuloManufacturado extends Articulo {
     @OneToMany( cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<DetalleArtManufacturado> detallesArtManufacturado = new ArrayList<>();
 
-    //Constructor
-    public ArticuloManufacturado(String denominacion, String descripcion, String Url_Imagen, double precioVenta, Estado estadoArticulo, Rubro rubro, int tiempoEstimadoCocina, String receta, List<DetalleArtManufacturado> detallesArtManufacturado) {
-        super(denominacion, descripcion, Url_Imagen, precioVenta, estadoArticulo, rubro);
-        this.tiempoEstimadoCocina = tiempoEstimadoCocina;
-        this.receta = receta;
-        this.detallesArtManufacturado = detallesArtManufacturado;
-    }
-
-
-    @PrePersist
-    public void prePersist() {
-        this.precioCosto = calcularPrecioCosto();
-    }
-
-    public double calcularPrecioCosto(){
-        double precioCosto = 0;
-        for (DetalleArtManufacturado detalleArtManufacturado: detallesArtManufacturado) {
-            precioCosto += detalleArtManufacturado.getArticuloInsumo().getPrecioCompra() * detalleArtManufacturado.getCantidad();
-        }
-        return precioCosto;
-    }
 }

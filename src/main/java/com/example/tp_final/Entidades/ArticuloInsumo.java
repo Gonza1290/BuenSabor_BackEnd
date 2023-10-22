@@ -22,7 +22,7 @@ public class ArticuloInsumo extends Articulo {
 
     //Relacion N a 1 con la clase UnidadMedida
     @NotNull
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private UnidadMedida unidadMedida;
 
     public ArticuloInsumo(String denominacion, String descripcion, String Url_Imagen, double precioVenta, Estado estadoArticulo, Rubro rubro, double precioCompra, int stockActual, int stockMinimo, UnidadMedida unidadMedida) {

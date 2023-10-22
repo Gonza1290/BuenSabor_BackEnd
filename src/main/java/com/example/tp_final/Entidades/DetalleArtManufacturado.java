@@ -18,6 +18,6 @@ public class DetalleArtManufacturado extends Base {
 
     //Relacion N a 1 con la clase ArticuloInsumo
     @NotNull
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private ArticuloInsumo articuloInsumo;
 }

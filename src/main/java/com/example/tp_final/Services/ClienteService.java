@@ -9,6 +9,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Optional;
+
 @Service
 public class ClienteService extends BaseServiceImpl<Cliente, Long>{
     @Autowired
@@ -26,5 +29,17 @@ public class ClienteService extends BaseServiceImpl<Cliente, Long>{
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
+    }
+
+    @Override
+    public Cliente save(Cliente entity) throws Exception {
+        entity.setFechaAlta(LocalDateTime.now());
+        return super.save(entity);
+    }
+
+    @Override
+    public Cliente update(Long aLong, Cliente entity) throws Exception {
+        entity.setFechaModificacion(LocalDateTime.now());
+        return super.update(aLong, entity);
     }
 }

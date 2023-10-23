@@ -11,6 +11,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Optional;
+
 @Service
 public class ArticuloManufacturadoService extends BaseServiceImpl<ArticuloManufacturado, Long>{
     @Autowired
@@ -21,12 +24,36 @@ public class ArticuloManufacturadoService extends BaseServiceImpl<ArticuloManufa
     public ArticuloManufacturado save(ArticuloManufacturado entity) throws Exception {
         try{
             calcularCosto(entity);
+            entity.setFechaAlta(LocalDateTime.now());
             entity = articuloManufacturadoRepository.save(entity);
             return entity;
         } catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }
+
+    @Override
+    public ArticuloManufacturado update(Long id, ArticuloManufacturado entity) throws Exception {
+        try{
+            Optional<ArticuloManufacturado> entityOptional = articuloManufacturadoRepository.findById(id);
+            ArticuloManufacturado entityUpdate = entityOptional.get();
+            entity.setFechaModificacion(LocalDateTime.now());
+            entity.setFechaAlta(entityUpdate.getFechaAlta());
+            entity.setFechaBaja(entityUpdate.getFechaBaja());
+            if (!entityUpdate.getEstadoArticulo().toString().equals(entity.getEstadoArticulo().toString())){
+                if (entity.getEstadoArticulo().toString().equals("Alta")){
+                    entity.setFechaAlta(LocalDateTime.now());
+                }else {
+                    entity.setFechaBaja(LocalDateTime.now());
+                }
+            }
+            entityUpdate = articuloManufacturadoRepository.save(entity);
+            return entityUpdate;
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
     public Page<ArticuloManufacturado> searchBydenominacion(String denominacion, Pageable pageable) throws Exception {
         try {
             Page<ArticuloManufacturado> articulosManufacturado = articuloManufacturadoRepository.findByDenominacionContaining(denominacion,pageable);

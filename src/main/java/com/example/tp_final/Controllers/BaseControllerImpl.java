@@ -42,7 +42,7 @@ public abstract class BaseControllerImpl<E , S extends BaseServiceImpl<E,Long>> 
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.save(entity));
         }catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente mas tarde.\"}");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 

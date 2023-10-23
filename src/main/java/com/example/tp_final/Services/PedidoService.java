@@ -1,6 +1,8 @@
 package com.example.tp_final.Services;
 
 import com.example.tp_final.Entidades.*;
+import com.example.tp_final.Repositories.ArticuloInsumoRepository;
+import com.example.tp_final.Repositories.ArticuloManufacturadoRepository;
 import com.example.tp_final.Repositories.BaseRepository;
 import com.example.tp_final.Repositories.PedidoRepository;
 import jakarta.transaction.Transactional;
@@ -17,13 +19,17 @@ import java.util.Optional;
 public class PedidoService extends BaseServiceImpl<Pedido, Long>{
     @Autowired
     private PedidoRepository pedidoRepository;
+    @Autowired
+    private ArticuloInsumoRepository articuloInsumoRepository;
+    @Autowired
+    private ArticuloManufacturadoRepository articuloManufacturadoRepository;
 
     @Override
     @Transactional
     public Pedido save(Pedido entity) throws Exception {
         try{
-            //Se settea la fecha
             verificarStock(entity);
+            actualizarStock(entity);
             entity.setFechaPedido(LocalDateTime.now());
             calcularTotalCosto(entity);
             calcularTotal(entity);
@@ -42,6 +48,8 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
         try{
             Optional<Pedido> entityOptional = pedidoRepository.findById(id);
             Pedido entityUpdate = entityOptional.get();
+            entity.setFechaPedido(LocalDateTime.now());
+            verificarStock(entity);
             calcularTotalCosto(entity);
             calcularTotal(entity);
             calcularHoraEstimadaEntrega(entity);
@@ -56,19 +64,43 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
             throw new Exception(e.getMessage());
         }
     }
+
     public void verificarStock(Pedido entity) throws Exception{
         for (DetallePedido detallePedido : entity.getDetallesPedido()) {
             if (detallePedido.getArticuloInsumo() != null) {
-                if(detallePedido.getCantidad() > detallePedido.getArticuloInsumo().getStockActual()) {
-                    throw new Exception();
+                ArticuloInsumo articuloInsumo = articuloInsumoRepository.getById(detallePedido.getArticuloInsumo().getId());
+                if(detallePedido.getCantidad() > articuloInsumo.getStockActual()) {
+                    throw new Exception("Stock insuficiente");
                 }
             }else {
-                if(detallePedido.getCantidad() > detallePedido.getArticuloInsumo().getStockActual()) {
-                    throw new Exception();
+                ArticuloManufacturado articuloManufacturado = articuloManufacturadoRepository.getById(detallePedido.getArticuloManufacturado().getId());
+                for (DetalleArtManufacturado detalleArtManufacturado : articuloManufacturado.getDetallesArtManufacturado()) {
+                    if (detalleArtManufacturado.getCantidad() * detallePedido.getCantidad() > detalleArtManufacturado.getArticuloInsumo().getStockActual()) {
+                        throw new Exception("Stock insuficiente");
+                    }
                 }
             }
         }
 
+    }
+    public void actualizarStock(Pedido entity){
+        for (DetallePedido detallePedido : entity.getDetallesPedido()) {
+            if (detallePedido.getArticuloInsumo() != null) {
+                ArticuloInsumo articuloInsumo = articuloInsumoRepository.getById(detallePedido.getArticuloInsumo().getId());
+                int stock = articuloInsumo.getStockActual();
+                stock -= detallePedido.getCantidad();
+                articuloInsumo.setStockActual(stock);
+                articuloInsumoRepository.save(articuloInsumo);
+            }else {
+                ArticuloManufacturado articuloManufacturado = articuloManufacturadoRepository.getById(detallePedido.getArticuloManufacturado().getId());
+                for (DetalleArtManufacturado detalleArtManufacturado : articuloManufacturado.getDetallesArtManufacturado()) {
+                    int stock = detalleArtManufacturado.getArticuloInsumo().getStockActual();
+                    stock -= detallePedido.getCantidad() * detalleArtManufacturado.getCantidad();
+                    detalleArtManufacturado.getArticuloInsumo().setStockActual(stock);
+                    articuloInsumoRepository.save(detalleArtManufacturado.getArticuloInsumo());
+                }
+            }
+        }
     }
 
     public void calcularTotalCosto(Pedido entity){

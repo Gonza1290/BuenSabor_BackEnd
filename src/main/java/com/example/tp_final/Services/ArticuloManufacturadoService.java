@@ -7,6 +7,8 @@ import com.example.tp_final.Repositories.ArticuloManufacturadoRepository;
 import com.example.tp_final.Repositories.BaseRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,6 +24,14 @@ public class ArticuloManufacturadoService extends BaseServiceImpl<ArticuloManufa
             entity = articuloManufacturadoRepository.save(entity);
             return entity;
         } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+    public Page<ArticuloManufacturado> searchBydenominacion(String denominacion, Pageable pageable) throws Exception {
+        try {
+            Page<ArticuloManufacturado> articulosManufacturado = articuloManufacturadoRepository.findByDenominacionContaining(denominacion,pageable);
+            return articulosManufacturado;
+        }catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }

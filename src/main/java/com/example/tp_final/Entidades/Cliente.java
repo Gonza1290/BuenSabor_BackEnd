@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="Cliente")
+@Table(name="Cliente",
+        uniqueConstraints = @UniqueConstraint(
+                columnNames = "email"
+        ))
 @Getter
 @Setter
 @NoArgsConstructor

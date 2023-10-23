@@ -23,32 +23,12 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
     public Pedido save(Pedido entity) throws Exception {
         try{
             //Se settea la fecha
+            verificarStock(entity);
             entity.setFechaPedido(LocalDateTime.now());
             calcularTotalCosto(entity);
             calcularTotal(entity);
             calcularHoraEstimadaEntrega(entity);
-
-
-        /*
-
-           /* List<DetalleFactura> detallesFactura = new ArrayList<>();
-            for (DetallePedido detallePedido: entity.getDetallesPedido()) {
-                DetalleFactura detalleFactura = new DetalleFactura();
-                detalleFactura.setCantidad(detallePedido.getCantidad());
-                detalleFactura.setArticulo(detallePedido.getArticulo());
-                detalleFactura.setSubtotal(detallePedido.getSubtotal());
-                detallesFactura.add(detalleFactura);
-            }
-            Factura factura = new Factura(entity.getFechaPedido(),total,detallesFactura);
-
-            //Si el tipo envio es retira entonces se aplica un 10% de descuento
-            if (entity.getTipoEnvio().name()=="retira") {
-                factura.setDescuento(0.1);
-            }else {
-                factura.setDescuento(0);
-            }
-            factura.setTotalFinal(total - total * factura.getDescuento());
-            entity.setFactura(factura); */
+            emitirFactura(entity);
 
             entity = pedidoRepository.save(entity);
             return entity;
@@ -65,8 +45,9 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
             calcularTotalCosto(entity);
             calcularTotal(entity);
             calcularHoraEstimadaEntrega(entity);
+            emitirFactura(entity);
 
-            if ("En_Delivery".equals(entity.getEstadoPedido()) || "Entregado".equals(entity.getEstadoPedido())) {
+            if ("En_Delivery".equals(entity.getEstadoPedido().toString()) || "Entregado".equals(entity.getEstadoPedido().toString())) {
                 ConfiguracionGeneral.tiempoEstimadoCocina -= entity.getHoraEstimadaPreparacion();
             }
             entityUpdate = pedidoRepository.save(entity);
@@ -74,6 +55,20 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
         } catch (Exception e){
             throw new Exception(e.getMessage());
         }
+    }
+    public void verificarStock(Pedido entity) throws Exception{
+        for (DetallePedido detallePedido : entity.getDetallesPedido()) {
+            if (detallePedido.getArticuloInsumo() != null) {
+                if(detallePedido.getCantidad() > detallePedido.getArticuloInsumo().getStockActual()) {
+                    throw new Exception();
+                }
+            }else {
+                if(detallePedido.getCantidad() > detallePedido.getArticuloInsumo().getStockActual()) {
+                    throw new Exception();
+                }
+            }
+        }
+
     }
 
     public void calcularTotalCosto(Pedido entity){
@@ -116,6 +111,30 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
         ConfiguracionGeneral.tiempoEstimadoCocina += horaEstimada ;
         horaEstimada = ConfiguracionGeneral.tiempoEstimadoCocina;
         entity.setHoraEstimadaEntrega(LocalTime.of(0, 0).plusMinutes(horaEstimada));
+    }
+    public void emitirFactura(Pedido entity){
+        if("Si".equals(entity.getPagado().toString())) {
+            List<DetalleFactura> detallesFactura = new ArrayList<>();
+            for (DetallePedido detallePedido : entity.getDetallesPedido()) {
+                DetalleFactura detalleFactura = new DetalleFactura();
+                detalleFactura.setCantidad(detallePedido.getCantidad());
+                detalleFactura.setArticuloInsumo(detallePedido.getArticuloInsumo());
+                detalleFactura.setArticuloManufacturado(detallePedido.getArticuloManufacturado());
+                detalleFactura.setSubtotal(detallePedido.getSubtotal());
+                detallesFactura.add(detalleFactura);
+            }
+            Factura factura = new Factura();
+            factura.setFechaFacturacion(LocalDateTime.now());
+            factura.setDetallesFactura(detallesFactura);
+
+            if ("retira".equals(entity.getTipoEnvio().toString())) {
+                factura.setDescuento(entity.getTotal() * 0.1);
+                factura.setTotalFinal(entity.getTotal() - factura.getDescuento());
+            } else {
+                factura.setDescuento(0);
+            }
+            entity.setFactura(factura);
+        }
     }
     public PedidoService(BaseRepository<Pedido, Long> baseRepository, PedidoRepository pedidoRepository) {
         super(baseRepository);

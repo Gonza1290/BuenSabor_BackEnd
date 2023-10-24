@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="servicios de artManufacturado y pedido">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/myDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ArticuloInsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ArticuloInsumoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ArticuloManufacturadoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ArticuloManufacturadoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Domicilio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Domicilio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ArticuloInsumoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ArticuloInsumoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ArticuloManufacturadoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ArticuloManufacturadoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloInsumoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloInsumoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloManufacturadoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloManufacturadoService.java" afterDir="false" />
-    </list>
+    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="servicios de pedidos y rubros" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +65,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Gonza/OneDrive/UTN/3º/Segundo Semestre/Desarrollo de Software/BackEnd/Trabajo Practico API/Api con Paginacion",
+    "last_opened_file_path": "C:/Users/Gonza/OneDrive/UTN/3º/Segundo Semestre/Desarrollo de Software/Ejemplo de proyecto final de ecoomerce/ecommerce_java_springboot-main",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -302,7 +291,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697983021688</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="servicios de artManufacturado y pedido">
+      <option name="closed" value="true" />
+      <created>1698067621019</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1698067621019</updated>
+    </task>
+    <task id="LOCAL-00026" summary="servicios de pedidos y rubros">
+      <option name="closed" value="true" />
+      <created>1698088062199</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1698088062199</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -343,6 +348,7 @@
     <MESSAGE value="sprint 4" />
     <MESSAGE value="sprint 4 modificacion en diagrama de clases" />
     <MESSAGE value="servicios de artManufacturado y pedido" />
-    <option name="LAST_COMMIT_MESSAGE" value="servicios de artManufacturado y pedido" />
+    <MESSAGE value="servicios de pedidos y rubros" />
+    <option name="LAST_COMMIT_MESSAGE" value="servicios de pedidos y rubros" />
   </component>
 </project>

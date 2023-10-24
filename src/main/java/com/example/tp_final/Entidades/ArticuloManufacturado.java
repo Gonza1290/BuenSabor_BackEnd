@@ -27,4 +27,11 @@ public class ArticuloManufacturado extends Articulo {
     @OneToMany( cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<DetalleArtManufacturado> detallesArtManufacturado = new ArrayList<>();
 
+    public ArticuloManufacturado(String denominacion, String descripcion, String Url_Imagen, double precioVenta, Estado estadoArticulo, Rubro rubro, int tiempoEstimadoCocina, double precioCosto, String receta, List<DetalleArtManufacturado> detallesArtManufacturado) {
+        super(denominacion, descripcion, Url_Imagen, precioVenta, estadoArticulo, rubro);
+        this.tiempoEstimadoCocina = tiempoEstimadoCocina;
+        this.precioCosto = precioCosto;
+        this.receta = receta;
+        this.detallesArtManufacturado = detallesArtManufacturado;
+    }
 }

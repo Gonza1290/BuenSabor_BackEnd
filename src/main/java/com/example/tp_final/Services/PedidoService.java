@@ -108,9 +108,11 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
         double totalCosto = 0;
         for (DetallePedido detallePedido : entity.getDetallesPedido()) {
             if (detallePedido.getArticuloInsumo() != null) {
-                totalCosto += detallePedido.getArticuloInsumo().getPrecioCompra() * detallePedido.getCantidad();
+                ArticuloInsumo articuloInsumo = articuloInsumoRepository.getById(detallePedido.getArticuloInsumo().getId());
+                totalCosto += articuloInsumo.getPrecioCompra() * detallePedido.getCantidad();
             }else {
-                totalCosto += detallePedido.getArticuloManufacturado().getPrecioCosto() * detallePedido.getCantidad();
+                ArticuloManufacturado articuloManufacturado = articuloManufacturadoRepository.getById(detallePedido.getArticuloManufacturado().getId());
+                totalCosto += articuloManufacturado.getPrecioCosto() * detallePedido.getCantidad();
             }
         }
         entity.setTotalCosto(totalCosto);
@@ -121,9 +123,11 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
         for (DetallePedido detallePedido : entity.getDetallesPedido()) {
             double subtotal;
             if (detallePedido.getArticuloInsumo() != null) {
-                subtotal = detallePedido.getArticuloInsumo().getPrecioVenta() * detallePedido.getCantidad();
+                ArticuloInsumo articuloInsumo = articuloInsumoRepository.getById(detallePedido.getArticuloInsumo().getId());
+                subtotal = articuloInsumo.getPrecioVenta() * detallePedido.getCantidad();
             }else {
-                subtotal = detallePedido.getArticuloManufacturado().getPrecioVenta() * detallePedido.getCantidad();
+                ArticuloManufacturado articuloManufacturado = articuloManufacturadoRepository.getById(detallePedido.getArticuloManufacturado().getId());
+                subtotal = articuloManufacturado.getPrecioVenta() * detallePedido.getCantidad();
             }
             detallePedido.setSubtotal(subtotal);
             total += detallePedido.getSubtotal();
@@ -135,7 +139,8 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
         int horaEstimada = 0;
         for (DetallePedido detallePedido : entity.getDetallesPedido()) {
             if (detallePedido.getArticuloManufacturado() != null) {
-                horaEstimada += detallePedido.getArticuloManufacturado().getTiempoEstimadoCocina() * detallePedido.getCantidad();
+                ArticuloManufacturado articuloManufacturado = articuloManufacturadoRepository.getById(detallePedido.getArticuloManufacturado().getId());
+                horaEstimada += articuloManufacturado.getTiempoEstimadoCocina() * detallePedido.getCantidad();
             }
         }
         horaEstimada = horaEstimada / ConfiguracionGeneral.cocineros;
@@ -165,6 +170,7 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
             } else {
                 factura.setDescuento(0);
             }
+            factura.setTotalFinal(entity.getTotal() - factura.getDescuento());
             entity.setFactura(factura);
         }
     }

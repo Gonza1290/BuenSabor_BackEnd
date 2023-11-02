@@ -1,5 +1,6 @@
 package com.example.tp_final.Entidades;
 
+import com.example.tp_final.DTO.ArticuloManufacturadoDTO;
 import com.example.tp_final.Enumeraciones.Estado;
 import jakarta.persistence.*;
 import lombok.*;
@@ -16,7 +17,28 @@ import java.util.List;
 @Getter
 @Setter
 @PrimaryKeyJoinColumn(referencedColumnName = "id")
-
+//Anotaciones para consulta personalizada, mapeando en articuloManufacturadoDTO
+@NamedNativeQuery(
+        name = "ArticuloManufacturado.searchsoldest",
+        query = "SELECT A.DENOMINACION AS denominacion, SUM(D.CANTIDAD) AS totalVendidos " +
+                "FROM PEDIDO AS P, PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D, " +
+                "ARTICULO_MANUFACTURADO AS AM, ARTICULO AS A " +
+                "WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID " +
+                "AND D.ARTICULO_MANUFACTURADO_ID = AM.ID AND A.ID = AM.ID AND P.PAGADO = 'Si'" +
+                "GROUP BY denominacion ORDER BY totalVendidos DESC",
+        resultSetMapping = "Mapping.ArticuloManufacturadoDTO")
+@SqlResultSetMapping(
+        name = "Mapping.ArticuloManufacturadoDTO",
+        classes = {
+                @ConstructorResult(
+                        targetClass = ArticuloManufacturadoDTO.class,
+                        columns = {
+                                @ColumnResult(name = "denominacion", type = String.class),
+                                @ColumnResult(name = "totalVendidos", type = int.class)
+                        }
+                )
+        }
+)
 public class ArticuloManufacturado extends Articulo {
 
     private int tiempoEstimadoCocina; //En minutos

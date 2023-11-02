@@ -1,5 +1,6 @@
 package com.example.tp_final;
 
+import com.example.tp_final.DTO.ArticuloManufacturadoDTO;
 import com.example.tp_final.Entidades.*;
 import com.example.tp_final.Enumeraciones.*;
 import com.example.tp_final.Repositories.*;
@@ -8,6 +9,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +19,8 @@ import java.util.Optional;
 @SpringBootApplication
 public class TpFinalApplication {
     //Inyeccion de dependencias por atributo
-
+    @Autowired
+    ArticuloManufacturadoRepository articuloManufacturadoRepository;
     /*@Autowired
       UsuarioRepository usuarioRepository;
       @Autowired
@@ -45,6 +49,8 @@ public class TpFinalApplication {
     @Bean
     public CommandLineRunner run() {
         return (args) -> {
+
+
             /*
             //Se crean 3 clientes
             Cliente cliente1 = new Cliente("Dalia", "Adam", "123456789","DaliaAdam@gmail.com","password", Estado.Alta);

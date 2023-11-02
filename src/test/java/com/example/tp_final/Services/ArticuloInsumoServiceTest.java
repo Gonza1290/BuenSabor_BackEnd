@@ -36,7 +36,7 @@ class ArticuloInsumoServiceTest {
         articuloInsumoList.add(articuloInsumo);
         Page<ArticuloInsumo> page = new PageImpl<>(articuloInsumoList, PageRequest.of(0, 5), articuloInsumoList.size());
 
-        when(articuloInsumoRepository.findByDenominacionContaining("CocaCola",PageRequest.of(0, 5))).thenReturn(page);
+        when(articuloInsumoRepository.findByDenominacionIgnoreCaseContaining("CocaCola",PageRequest.of(0, 5))).thenReturn(page);
 
 
         assertEquals(page, articuloInsumoService.searchBydenominacion("CocaCola",PageRequest.of(0, 5)));

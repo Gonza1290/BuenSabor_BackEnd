@@ -10,12 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 
-import javax.swing.text.html.parser.Entity;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -40,7 +36,7 @@ class ArticuloInsumoRepositoryTest {
         entityManager.flush();
 
         // Realiza la búsqueda utilizando el repositorio
-        Page<ArticuloInsumo> page = articuloInsumoRepository.findByDenominacionContaining("CocaCola", PageRequest.of(0, 5));
+        Page<ArticuloInsumo> page = articuloInsumoRepository.findByDenominacionIgnoreCaseContaining("CocaCola", PageRequest.of(0, 5));
 
         // Verifica si la página contiene el elemento que esperas
         List<ArticuloInsumo> articuloInsumoList = page.getContent();

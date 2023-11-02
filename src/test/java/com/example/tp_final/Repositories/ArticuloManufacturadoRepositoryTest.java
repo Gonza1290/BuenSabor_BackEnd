@@ -1,5 +1,6 @@
 package com.example.tp_final.Repositories;
 
+import com.example.tp_final.DTO.ArticuloManufacturadoDTO;
 import com.example.tp_final.Entidades.*;
 import com.example.tp_final.Enumeraciones.Estado;
 import com.example.tp_final.Enumeraciones.TipoRubro;
@@ -42,14 +43,23 @@ class ArticuloManufacturadoRepositoryTest {
         entityManager.flush();
 
         // Realiza la búsqueda utilizando el repositorio
-        Page<ArticuloManufacturado> page = articuloManufacturadoRepository.findByDenominacionContaining("Pizza", PageRequest.of(0, 5));
+        Page<ArticuloManufacturado> page = articuloManufacturadoRepository.findByDenominacionIgnoreCaseContaining("Pizza", PageRequest.of(0, 5));
 
-        // Verificar si la página contiene el elemento
+        // Verifico si la página contiene el elemento
         List<ArticuloManufacturado> articuloManufacturadoList = page.getContent();
         assertEquals(1, articuloManufacturadoList.size()); // Debería haber un elemento
         assertEquals(articuloManufacturado.getDenominacion(), articuloManufacturadoList.get(0).getDenominacion());
 
         // También puedes verificar otros atributos si es necesario
         // assertEquals(articuloInsumo.getOtroAtributo(), articuloInsumoList.get(0).getOtroAtributo());
+    }
+    @Test
+    void searchsoldest(){
+        Page<ArticuloManufacturadoDTO> articulosManufacturadosDTOS = articuloManufacturadoRepository.searchsoldest(PageRequest.of(0, 5));
+        List<ArticuloManufacturadoDTO> articuloManufacturadoDTOList = articulosManufacturadosDTOS.getContent();
+        for (ArticuloManufacturadoDTO articuloManufacturadoDTO: articuloManufacturadoDTOList) {
+            assertEquals(articuloManufacturadoDTO.getDenominacion(),"string");
+            assertEquals(articuloManufacturadoDTO.getTotalVendidos(),36);
+        }
     }
 }

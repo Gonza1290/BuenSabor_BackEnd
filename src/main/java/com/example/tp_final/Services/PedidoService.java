@@ -37,6 +37,7 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
             emitirFactura(entity);
 
             entity = pedidoRepository.save(entity);
+            entity = findById(entity.getId());
             return entity;
         } catch (Exception e){
             throw new Exception(e.getMessage());
@@ -173,6 +174,20 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
             factura.setTotalFinal(entity.getTotal() - factura.getDescuento());
             entity.setFactura(factura);
         }
+    }
+    //Funcion que busca los articulos mas vendidos
+
+    @Transactional
+    public void articulosMasPedidos(){
+        List<Pedido> pedidosList = pedidoRepository.findAll();
+        for (Pedido pedido : pedidosList) {
+            for (DetallePedido detallePedido : pedido.getDetallesPedido()) {
+                if (detallePedido.getArticuloManufacturado() != null) {
+
+                }
+            }
+        }
+
     }
     public PedidoService(BaseRepository<Pedido, Long> baseRepository, PedidoRepository pedidoRepository) {
         super(baseRepository);

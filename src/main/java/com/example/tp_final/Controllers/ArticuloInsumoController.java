@@ -22,4 +22,12 @@ public class ArticuloInsumoController extends BaseControllerImpl<ArticuloInsumo,
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente más tarde.\"}");
         }
     }
+    @GetMapping("/searchsoldest")
+    public ResponseEntity<?> searchsoldest( Pageable pageable) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchsoldest(pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente más tarde.\"}");
+        }
+    }
 }

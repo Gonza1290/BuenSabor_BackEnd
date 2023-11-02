@@ -3,7 +3,6 @@ package com.example.tp_final.Services;
 import com.example.tp_final.Entidades.*;
 import com.example.tp_final.Enumeraciones.Estado;
 import com.example.tp_final.Enumeraciones.TipoRubro;
-import com.example.tp_final.Repositories.ArticuloInsumoRepository;
 import com.example.tp_final.Repositories.ArticuloManufacturadoRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +39,7 @@ class ArticuloManufacturadoServiceTest {
         articuloManufacturadoList.add(articuloManufacturado);
         Page<ArticuloManufacturado> page = new PageImpl<>(articuloManufacturadoList, PageRequest.of(0, 5), articuloManufacturadoList.size());
 
-        when(articuloManufacturadoRepository.findByDenominacionContaining("Pizza",PageRequest.of(0, 5))).thenReturn(page);
+        when(articuloManufacturadoRepository.findByDenominacionIgnoreCaseContaining("Pizza",PageRequest.of(0, 5))).thenReturn(page);
 
 
         assertEquals(page, articuloManufacturadoService.searchBydenominacion("Pizza",PageRequest.of(0, 5)));

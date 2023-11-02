@@ -1,10 +1,9 @@
 package com.example.tp_final.Services;
 
+import com.example.tp_final.DTO.ArticuloInsumoDTO;
 import com.example.tp_final.Entidades.ArticuloInsumo;
-import com.example.tp_final.Entidades.Cliente;
 import com.example.tp_final.Repositories.ArticuloInsumoRepository;
 import com.example.tp_final.Repositories.BaseRepository;
-import com.example.tp_final.Repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,13 +24,20 @@ public class ArticuloInsumoService extends BaseServiceImpl<ArticuloInsumo, Long>
 
     public Page<ArticuloInsumo> searchBydenominacion(String denominacion, Pageable pageable) throws Exception {
         try {
-            Page<ArticuloInsumo> articulosInsumo = articuloInsumoRepository.findByDenominacionContaining(denominacion,pageable);
+            Page<ArticuloInsumo> articulosInsumo = articuloInsumoRepository.findByDenominacionIgnoreCaseContaining(denominacion,pageable);
             return articulosInsumo;
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }
-
+    public Page<ArticuloInsumoDTO> searchsoldest(Pageable pageable) throws Exception {
+        try {
+            Page<ArticuloInsumoDTO> articuloInsumoDTOS = articuloInsumoRepository.searchsoldest(pageable);
+            return articuloInsumoDTOS;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
     @Override
     public ArticuloInsumo save(ArticuloInsumo entity) throws Exception {
         entity.setFechaAlta(LocalDateTime.now());

@@ -714,3 +714,557 @@ The object is already closed [90007-214]
 2023-10-30 12:33:37 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
 The object is already closed [90007-214]
+2023-11-01 17:01:18 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]PEDIDO SELECT * FROM DETALLE_PEDIDO"; se esperaba "PREPARE"
+Syntax error in SQL statement "[*]PEDIDO SELECT * FROM DETALLE_PEDIDO"; expected "PREPARE"; SQL statement:
+PEDIDO SELECT * FROM DETALLE_PEDIDO [42001-214]
+2023-11-01 17:02:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM PEDIDO, PEDIDO_DETALLES_PEDIDO WHERE PEDIDO_ID =[*]= DETALLES_PEDIDO_ID"; se esperaba "ALL (, ANY (, SOME ("
+Syntax error in SQL statement "SELECT * FROM PEDIDO, PEDIDO_DETALLES_PEDIDO WHERE PEDIDO_ID =[*]= DETALLES_PEDIDO_ID"; expected "ALL (, ANY (, SOME ("; SQL statement:
+SELECT * FROM PEDIDO, PEDIDO_DETALLES_PEDIDO WHERE PEDIDO_ID == DETALLES_PEDIDO_ID [42001-214]
+2023-11-01 17:02:35 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM PEDIDO, PEDIDO_DETALLES_PEDIDO WHERE PEDIDO_ID =[*]= DETALLES_PEDIDO_ID"; se esperaba "ALL (, ANY (, SOME ("
+Syntax error in SQL statement "SELECT * FROM PEDIDO, PEDIDO_DETALLES_PEDIDO WHERE PEDIDO_ID =[*]= DETALLES_PEDIDO_ID"; expected "ALL (, ANY (, SOME ("; SQL statement:
+SELECT * FROM PEDIDO, PEDIDO_DETALLES_PEDIDO WHERE PEDIDO_ID == DETALLES_PEDIDO_ID [42001-214]
+2023-11-01 17:02:36 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM PEDIDO, PEDIDO_DETALLES_PEDIDO WHERE PEDIDO_ID =[*]= DETALLES_PEDIDO_ID"; se esperaba "ALL (, ANY (, SOME ("
+Syntax error in SQL statement "SELECT * FROM PEDIDO, PEDIDO_DETALLES_PEDIDO WHERE PEDIDO_ID =[*]= DETALLES_PEDIDO_ID"; expected "ALL (, ANY (, SOME ("; SQL statement:
+SELECT * FROM PEDIDO, PEDIDO_DETALLES_PEDIDO WHERE PEDIDO_ID == DETALLES_PEDIDO_ID [42001-214]
+2023-11-01 17:11:04 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * \000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D\000d\000aWHERE P.ID = PDP.PEDIDO_ID [*], D.ID = PDP.DETALLES_PEDIDO_ID"
+Syntax error in SQL statement "SELECT * \000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D\000d\000aWHERE P.ID = PDP.PEDIDO_ID [*], D.ID = PDP.DETALLES_PEDIDO_ID"; SQL statement:
+SELECT * 
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D
+WHERE P.ID = PDP.PEDIDO_ID , D.ID = PDP.DETALLES_PEDIDO_ID [42000-214]
+2023-11-01 17:15:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT SUM([*]*)\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS ART\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = ART.ID \000d\000aGROUP BY ART"; se esperaba "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "SELECT SUM([*]*)\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS ART\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = ART.ID \000d\000aGROUP BY ART"; expected "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+SELECT SUM(*)
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS ART
+WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = ART.ID 
+GROUP BY ART [42001-214]
+2023-11-01 17:16:20 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT SUM([*])\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS ART\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = ART.ID \000d\000aGROUP BY ART"; se esperaba "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "SELECT SUM([*])\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS ART\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = ART.ID \000d\000aGROUP BY ART"; expected "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+SELECT SUM()
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS ART
+WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = ART.ID 
+GROUP BY ART [42001-214]
+2023-11-01 17:16:35 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT SUM([*])\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS ART\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = ART.ID"; se esperaba "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "SELECT SUM([*])\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS ART\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = ART.ID"; expected "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+SELECT SUM()
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS ART
+WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = ART.ID [42001-214]
+2023-11-01 17:17:57 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT SUM([*])\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID\000d\000aGROUP BY AI"; se esperaba "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "SELECT SUM([*])\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID\000d\000aGROUP BY AI"; expected "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+SELECT SUM()
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A
+WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID
+GROUP BY AI [42001-214]
+2023-11-01 17:18:03 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "AI" no encontrada
+Column "AI" not found; SQL statement:
+SELECT *
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A
+WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID
+GROUP BY AI [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:575)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp.query(WebApp.java:1113)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-01 17:18:42 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SUM ó AVG sobre un tipo de datos invalidado para "SUM(A.DENOMINACION)"
+SUM or AVG on wrong data type for "SUM(A.DENOMINACION)"; SQL statement:
+SELECT  SUM(A.DENOMINACION)
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A
+WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID [90015-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.aggregate.Aggregate.optimize(Aggregate.java:981)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:575)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp.query(WebApp.java:1113)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-01 17:19:05 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT  SUM([*]*)\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID"; se esperaba "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "SELECT  SUM([*]*)\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID"; expected "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+SELECT  SUM(*)
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A
+WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID [42001-214]
+2023-11-01 17:20:07 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT  A.DENOMINACION, SUM([*]*)\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID\000d\000aGROUP BY A.DENOMINACION"; se esperaba "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "SELECT  A.DENOMINACION, SUM([*]*)\000d\000aFROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A\000d\000aWHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID\000d\000aGROUP BY A.DENOMINACION"; expected "DISTINCT, ALL, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+SELECT  A.DENOMINACION, SUM(*)
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A
+WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID
+GROUP BY A.DENOMINACION [42001-214]
+2023-11-01 17:24:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-01 17:24:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-01 17:24:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-01 17:24:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-01 17:24:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-01 17:24:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-01 17:24:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-01 17:24:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-01 17:26:16 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "D.CANTIDAD" debe estar incluida en la lista de GROUP BY
+Column "D.CANTIDAD" must be in the GROUP BY list; SQL statement:
+SELECT  A.DENOMINACION, COUNT(*) *D.CANTIDAD AS VENDIDOS
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A
+WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID
+GROUP BY A.DENOMINACION [90016-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.expression.Operation2.updateAggregate(Operation2.java:58)
+	at org.h2.expression.Alias.updateAggregate(Alias.java:74)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select.gatherGroup(Select.java:522)
+	at org.h2.command.query.Select.queryGroup(Select.java:488)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:828)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:512)
+	at org.h2.command.query.Query.query(Query.java:475)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:251)
+	at org.h2.command.Command.executeQuery(Command.java:190)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:247)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp.query(WebApp.java:1113)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-01 17:26:26 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "D.CANTIDAD" debe estar incluida en la lista de GROUP BY
+Column "D.CANTIDAD" must be in the GROUP BY list; SQL statement:
+SELECT  A.DENOMINACION, (COUNT(*) *D.CANTIDAD) AS VENDIDOS
+FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D,ARTICULO_MANUFACTURADO AS AI,  ARTICULO AS A
+WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID  = AI.ID AND A.ID = AI.ID
+GROUP BY A.DENOMINACION [90016-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.expression.Operation2.updateAggregate(Operation2.java:58)
+	at org.h2.expression.Alias.updateAggregate(Alias.java:74)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select.gatherGroup(Select.java:522)
+	at org.h2.command.query.Select.queryGroup(Select.java:488)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:828)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:512)
+	at org.h2.command.query.Query.query(Query.java:475)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:251)
+	at org.h2.command.Command.executeQuery(Command.java:190)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:247)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp.query(WebApp.java:1113)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-02 11:43:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 11:53:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 11:55:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 11:55:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 11:55:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 11:55:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 11:57:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 11:57:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 11:57:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 11:57:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:00:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:00:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:00:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:00:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:04:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:04:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:04:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:04:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:04:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:04:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:04:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:04:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:50:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:50:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:50:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:50:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:51:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:51:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:51:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 12:51:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:16:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:16:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:16:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:16:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:22:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT A.DENOMINACION AS denominacion, SUM(D.CANTIDAD) AS totalVendidos FROM PEDIDO AS P, PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D, ARTICULO_MANUFACTURADO AS AM, ARTICULO AS A WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID = AM.ID AND A.ID = AM.ID GROUP BY denominacionORDER [*]BY totalVendidos DESC fetch first ? rows only"
+Syntax error in SQL statement "SELECT A.DENOMINACION AS denominacion, SUM(D.CANTIDAD) AS totalVendidos FROM PEDIDO AS P, PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D, ARTICULO_MANUFACTURADO AS AM, ARTICULO AS A WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID = AM.ID AND A.ID = AM.ID GROUP BY denominacionORDER [*]BY totalVendidos DESC fetch first ? rows only"; SQL statement:
+SELECT A.DENOMINACION AS denominacion, SUM(D.CANTIDAD) AS totalVendidos FROM PEDIDO AS P, PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D, ARTICULO_MANUFACTURADO AS AM, ARTICULO AS A WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID = AM.ID AND A.ID = AM.ID GROUP BY denominacionORDER BY totalVendidos DESC fetch first ? rows only [42000-214]
+2023-11-02 16:22:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT A.DENOMINACION AS denominacion, SUM(D.CANTIDAD) AS totalVendidos FROM PEDIDO AS P, PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D, ARTICULO_MANUFACTURADO AS AM, ARTICULO AS A WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID = AM.ID AND A.ID = AM.ID GROUP BY denominacionORDER [*]BY totalVendidos DESC fetch first ? rows only"
+Syntax error in SQL statement "SELECT A.DENOMINACION AS denominacion, SUM(D.CANTIDAD) AS totalVendidos FROM PEDIDO AS P, PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D, ARTICULO_MANUFACTURADO AS AM, ARTICULO AS A WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID = AM.ID AND A.ID = AM.ID GROUP BY denominacionORDER [*]BY totalVendidos DESC fetch first ? rows only"; SQL statement:
+SELECT A.DENOMINACION AS denominacion, SUM(D.CANTIDAD) AS totalVendidos FROM PEDIDO AS P, PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D, ARTICULO_MANUFACTURADO AS AM, ARTICULO AS A WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_MANUFACTURADO_ID = AM.ID AND A.ID = AM.ID GROUP BY denominacionORDER BY totalVendidos DESC fetch first ? rows only [42000-214]
+2023-11-02 16:25:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:25:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:26:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:26:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:28:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:28:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:30:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:30:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:30:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:30:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:30:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:30:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:31:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:31:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:31:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:31:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:31:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:31:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:43:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:43:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:43:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:43:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:43:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:43:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:50:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:50:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:50:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:50:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:50:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:50:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:50:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:50:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-11-02 16:50:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]

@@ -9,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "api/v1/articulos/insumos")
@@ -30,4 +33,13 @@ public class ArticuloInsumoController extends BaseControllerImpl<ArticuloInsumo,
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente más tarde.\"}");
         }
     }
+    @GetMapping("/searchSoldestByDate")
+    public ResponseEntity<?> searchSoldestByDate(@RequestParam LocalDate fechaInicio, @RequestParam LocalDate fechaFin, Pageable pageable) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchSoldestByDate(fechaInicio,fechaFin,pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente más tarde.\"}");
+        }
+    }
 }
+

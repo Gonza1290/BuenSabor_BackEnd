@@ -24,6 +24,14 @@ import java.io.Serializable;
                 "GROUP BY denominación\n" +
                 "ORDER BY totalVendidos DESC",
         resultSetMapping = "Mapping.ArticuloInsumoDTO")
+@NamedNativeQuery(
+        name = "ArticuloInsumo.searchSoldestByDate",
+        query = "SELECT  A.DENOMINACION AS denominación , SUM(D.CANTIDAD) AS totalVendidos\n" +
+                "FROM PEDIDO AS P , PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D, ARTICULO_INSUMO AS AI,  ARTICULO AS A\n" +
+                "WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID AND D.ARTICULO_INSUMO_ID  = AI.ID AND A.ID = AI.ID AND P.PAGADO = 'Si' AND P.FECHA_PEDIDO BETWEEN :fechaInicio AND :fechaFin " +
+                "GROUP BY denominación\n" +
+                "ORDER BY totalVendidos DESC",
+        resultSetMapping = "Mapping.ArticuloInsumoDTO")
 @SqlResultSetMapping(
         name = "Mapping.ArticuloInsumoDTO",
         classes = {

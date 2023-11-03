@@ -27,6 +27,15 @@ import java.util.List;
                 "AND D.ARTICULO_MANUFACTURADO_ID = AM.ID AND A.ID = AM.ID AND P.PAGADO = 'Si'" +
                 "GROUP BY denominacion ORDER BY totalVendidos DESC",
         resultSetMapping = "Mapping.ArticuloManufacturadoDTO")
+@NamedNativeQuery(
+        name = "ArticuloManufacturado.searchSoldestByDate",
+        query = "SELECT A.DENOMINACION AS denominacion, SUM(D.CANTIDAD) AS totalVendidos " +
+                "FROM PEDIDO AS P, PEDIDO_DETALLES_PEDIDO AS PDP, DETALLE_PEDIDO AS D, " +
+                "ARTICULO_MANUFACTURADO AS AM, ARTICULO AS A " +
+                "WHERE P.ID = PDP.PEDIDO_ID AND D.ID = PDP.DETALLES_PEDIDO_ID " +
+                "AND D.ARTICULO_MANUFACTURADO_ID = AM.ID AND A.ID = AM.ID AND P.PAGADO = 'Si' AND P.FECHA_PEDIDO BETWEEN :fechaInicio AND :fechaFin " +
+                "GROUP BY denominacion ORDER BY totalVendidos DESC",
+        resultSetMapping = "Mapping.ArticuloManufacturadoDTO")
 @SqlResultSetMapping(
         name = "Mapping.ArticuloManufacturadoDTO",
         classes = {

@@ -8,6 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
+
 @Repository
 public interface ArticuloInsumoRepository extends BaseRepository<ArticuloInsumo,Long> {
 
@@ -15,4 +17,7 @@ public interface ArticuloInsumoRepository extends BaseRepository<ArticuloInsumo,
     Page<ArticuloInsumo> findByDenominacionIgnoreCaseContaining(String denominacion, Pageable pageable);
     @Query(nativeQuery = true)
     Page<ArticuloInsumoDTO> searchsoldest(Pageable pageable);
+
+    @Query(nativeQuery = true)
+    Page<ArticuloInsumoDTO> searchSoldestByDate(LocalDateTime fechaInicio,LocalDateTime fechaFin,Pageable pageable);
 }

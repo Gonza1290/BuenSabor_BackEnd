@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="Links">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/DTO/ArticulosManufacturadosDTO.java" afterDir="false" />
+    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="Historia de usuario - Ranking de productos sin fechas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/myDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/myDB.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/PedidoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ArticuloInsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ArticuloInsumoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ArticuloManufacturadoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ArticuloManufacturadoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/ArticuloInsumo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/ArticuloInsumo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/ArticuloManufacturado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/ArticuloManufacturado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ArticuloInsumoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ArticuloInsumoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ArticuloManufacturadoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ArticuloManufacturadoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloInsumoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloInsumoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloManufacturadoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloManufacturadoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/PedidoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,24 +86,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Gonza/OneDrive/UTN/3º/Segundo Semestre/Desarrollo de Software/BackEnd/Trabajo Practico API/Api con Paginacion",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.completion"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gonza/OneDrive/UTN/3º/Segundo Semestre/Desarrollo de Software/BackEnd/Trabajo Practico API/Api con Paginacion&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Gonza\OneDrive\UTN\3º\Segundo Semestre\Desarrollo de Software\Trabajo Final\BuenSabor_BackEnd\src\test\java\com\example\tp_final" />
@@ -109,9 +113,9 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.tp_final.Repositories" />
       <recent name="com.example.tp_final.Controllers" />
       <recent name="com.example.tp_final.Services" />
-      <recent name="com.example.tp_final.Repositories" />
     </key>
   </component>
   <component name="RunManager">
@@ -139,7 +143,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ArticuloInsumoServiceTest.searchBydenominacion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ArticuloInsumoRepositoryTest.findByDenominacionContaining" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -152,7 +156,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.tp_final.Services.ArticuloInsumoServiceTest.searchBydenominacion&quot;" />
+            <option value="&quot;com.example.tp_final.Repositories.ArticuloInsumoRepositoryTest.findByDenominacionContaining&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -187,7 +191,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ArticuloManufacturadoRepositoryTest.findByDenominacionContaining" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ArticuloManufacturadoRepositoryTest.searchsoldest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -200,7 +204,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.tp_final.Repositories.ArticuloManufacturadoRepositoryTest.findByDenominacionContaining&quot;" />
+            <option value="&quot;com.example.tp_final.Repositories.ArticuloManufacturadoRepositoryTest.searchsoldest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -211,7 +215,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ArticuloManufacturadoServiceTest.searchBydenominacion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TpFinalApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -224,7 +228,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.tp_final.Services.ArticuloManufacturadoServiceTest.searchBydenominacion&quot;" />
+            <option value="&quot;com.example.tp_final.TpFinalApplicationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -250,11 +254,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ArticuloManufacturadoRepositoryTest.searchsoldest" />
+        <item itemvalue="Gradle.TpFinalApplicationTests" />
+        <item itemvalue="Gradle.ArticuloInsumoRepositoryTest.findByDenominacionContaining" />
         <item itemvalue="Gradle.ArticuloManufacturadoControllerTest.searchByDenominacion" />
         <item itemvalue="Gradle.ArticuloInsumoControllerTest.searchByDenominacion" />
-        <item itemvalue="Gradle.ArticuloManufacturadoServiceTest.searchBydenominacion" />
-        <item itemvalue="Gradle.ArticuloInsumoServiceTest.searchBydenominacion" />
-        <item itemvalue="Gradle.ArticuloManufacturadoRepositoryTest.findByDenominacionContaining" />
       </list>
     </recent_temporary>
   </component>
@@ -518,7 +522,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698680204420</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Historia de usuario - Ranking de productos sin fechas">
+      <option name="closed" value="true" />
+      <created>1698954762345</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1698954762345</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -564,17 +576,7 @@
     <MESSAGE value="diagrama de clases y postman" />
     <MESSAGE value="api con postman" />
     <MESSAGE value="Links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Links" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/PedidoRepository.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Historia de usuario - Ranking de productos sin fechas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Historia de usuario - Ranking de productos sin fechas" />
   </component>
 </project>

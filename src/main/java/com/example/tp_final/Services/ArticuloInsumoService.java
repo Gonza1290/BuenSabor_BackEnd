@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -33,6 +34,16 @@ public class ArticuloInsumoService extends BaseServiceImpl<ArticuloInsumo, Long>
     public Page<ArticuloInsumoDTO> searchsoldest(Pageable pageable) throws Exception {
         try {
             Page<ArticuloInsumoDTO> articuloInsumoDTOS = articuloInsumoRepository.searchsoldest(pageable);
+            return articuloInsumoDTOS;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+    public Page<ArticuloInsumoDTO> searchSoldestByDate(LocalDate fechaInicio, LocalDate fechaFin, Pageable pageable) throws Exception {
+        try {
+            LocalDateTime fechaI = fechaInicio.atStartOfDay();
+            LocalDateTime fechaF = fechaFin.atStartOfDay();
+            Page<ArticuloInsumoDTO> articuloInsumoDTOS = articuloInsumoRepository.searchSoldestByDate(fechaI,fechaF,pageable);
             return articuloInsumoDTOS;
         }catch (Exception e){
             throw new Exception(e.getMessage());

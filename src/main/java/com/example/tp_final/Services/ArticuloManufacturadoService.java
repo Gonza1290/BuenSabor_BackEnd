@@ -1,5 +1,6 @@
 package com.example.tp_final.Services;
 
+import com.example.tp_final.DTO.ArticuloInsumoDTO;
 import com.example.tp_final.DTO.ArticuloManufacturadoDTO;
 import com.example.tp_final.Entidades.ArticuloInsumo;
 import com.example.tp_final.Entidades.ArticuloManufacturado;
@@ -13,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -78,6 +80,16 @@ public class ArticuloManufacturadoService extends BaseServiceImpl<ArticuloManufa
     public Page<ArticuloManufacturadoDTO> searchsoldest(Pageable pageable) throws Exception {
         try {
             Page<ArticuloManufacturadoDTO> articuloManufacturadoDTOS = articuloManufacturadoRepository.searchsoldest(pageable);
+            return articuloManufacturadoDTOS;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+    public Page<ArticuloManufacturadoDTO> searchSoldestByDate(LocalDate fechaInicio, LocalDate fechaFin, Pageable pageable) throws Exception {
+        try {
+            LocalDateTime fechaI = fechaInicio.atStartOfDay();
+            LocalDateTime fechaF = fechaFin.atStartOfDay();
+            Page<ArticuloManufacturadoDTO> articuloManufacturadoDTOS = articuloManufacturadoRepository.searchSoldestByDate(fechaI,fechaF,pageable);
             return articuloManufacturadoDTOS;
         }catch (Exception e){
             throw new Exception(e.getMessage());

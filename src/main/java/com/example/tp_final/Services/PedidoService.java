@@ -1,5 +1,6 @@
 package com.example.tp_final.Services;
 
+import com.example.tp_final.DTO.PedidoDTO;
 import com.example.tp_final.Entidades.*;
 import com.example.tp_final.Repositories.ArticuloInsumoRepository;
 import com.example.tp_final.Repositories.ArticuloManufacturadoRepository;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -181,6 +183,24 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
         try {
             Page<Pedido> pedidosCliente = pedidoRepository.findByCliente(Id,pageable);
             return pedidosCliente;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+    public Page<PedidoDTO> movimientosMonerios(Pageable pageable) throws Exception {
+        try {
+            Page<PedidoDTO> pedidoDTOS = pedidoRepository.movimientosMonerios(pageable);
+            return pedidoDTOS;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+    public Page<PedidoDTO> movimientosMoneriosByDate(LocalDate fechaInicio, LocalDate fechaFin, Pageable pageable) throws Exception {
+        try {
+            LocalDateTime fechaI = fechaInicio.atStartOfDay();
+            LocalDateTime fechaF = LocalDateTime.of(fechaFin, LocalTime.of(23, 59, 59, 999_999_999));
+            Page<PedidoDTO> pedidoDTOS = pedidoRepository.movimientosMoneriosByDate(fechaI,fechaF,pageable);
+            return pedidoDTOS;
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }

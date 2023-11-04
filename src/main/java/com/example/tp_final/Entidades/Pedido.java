@@ -1,19 +1,20 @@
 package com.example.tp_final.Entidades;
 
+
+import com.example.tp_final.DTO.PedidoDTO;
 import com.example.tp_final.Enumeraciones.EstadoPedido;
 import com.example.tp_final.Enumeraciones.FormaPago;
 import com.example.tp_final.Enumeraciones.Pagado;
 import com.example.tp_final.Enumeraciones.TipoEnvio;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Null;
-import lombok.Data;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
-import java.io.Serializable;
-import java.time.LocalDate;
+
+
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -24,6 +25,29 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@NamedNativeQuery(
+        name = "Pedido.movimientosMonerios",
+        query = "SELECT SUM(P.TOTAL) AS total,  SUM(P.TOTAL_COSTO) AS totalCosto, (SUM(P.TOTAL) - SUM(P.TOTAL_COSTO)) AS ganancias\n" +
+                "FROM PEDIDO AS P",
+        resultSetMapping = "Mapping.PedidoDTO")
+@NamedNativeQuery(
+        name = "Pedido.movimientosMoneriosByDate",
+        query = "SELECT SUM(P.TOTAL) AS total,  SUM(P.TOTAL_COSTO) AS totalCosto, (SUM(P.TOTAL) - SUM(P.TOTAL_COSTO)) AS ganancias\n" +
+                "FROM PEDIDO AS P WHERE P.FECHA_PEDIDO BETWEEN :fechaInicio AND :fechaFin",
+        resultSetMapping = "Mapping.PedidoDTO")
+@SqlResultSetMapping(
+        name = "Mapping.PedidoDTO",
+        classes = {
+                @ConstructorResult(
+                        targetClass = PedidoDTO.class,
+                        columns = {
+                                @ColumnResult(name = "total", type = double.class),
+                                @ColumnResult(name = "totalCosto", type = double.class),
+                                @ColumnResult(name = "ganancias", type = double.class)
+                        }
+                )
+        }
+)
 public class Pedido extends Base {
 
     private LocalDateTime fechaPedido;

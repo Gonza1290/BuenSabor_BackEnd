@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Optional;
 
 @Service
@@ -42,13 +43,14 @@ public class ArticuloInsumoService extends BaseServiceImpl<ArticuloInsumo, Long>
     public Page<ArticuloInsumoDTO> searchSoldestByDate(LocalDate fechaInicio, LocalDate fechaFin, Pageable pageable) throws Exception {
         try {
             LocalDateTime fechaI = fechaInicio.atStartOfDay();
-            LocalDateTime fechaF = fechaFin.atStartOfDay();
+            LocalDateTime fechaF = LocalDateTime.of(fechaFin, LocalTime.of(23, 59, 59, 999_999_999));
             Page<ArticuloInsumoDTO> articuloInsumoDTOS = articuloInsumoRepository.searchSoldestByDate(fechaI,fechaF,pageable);
             return articuloInsumoDTOS;
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }
+
     @Override
     public ArticuloInsumo save(ArticuloInsumo entity) throws Exception {
         entity.setFechaAlta(LocalDateTime.now());

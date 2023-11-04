@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Optional;
 
 @Service
@@ -88,7 +89,7 @@ public class ArticuloManufacturadoService extends BaseServiceImpl<ArticuloManufa
     public Page<ArticuloManufacturadoDTO> searchSoldestByDate(LocalDate fechaInicio, LocalDate fechaFin, Pageable pageable) throws Exception {
         try {
             LocalDateTime fechaI = fechaInicio.atStartOfDay();
-            LocalDateTime fechaF = fechaFin.atStartOfDay();
+            LocalDateTime fechaF = LocalDateTime.of(fechaFin, LocalTime.of(23, 59, 59, 999_999_999));;
             Page<ArticuloManufacturadoDTO> articuloManufacturadoDTOS = articuloManufacturadoRepository.searchSoldestByDate(fechaI,fechaF,pageable);
             return articuloManufacturadoDTOS;
         }catch (Exception e){

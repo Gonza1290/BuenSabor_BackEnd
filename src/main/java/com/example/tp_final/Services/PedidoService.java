@@ -7,6 +7,8 @@ import com.example.tp_final.Repositories.BaseRepository;
 import com.example.tp_final.Repositories.PedidoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -175,19 +177,13 @@ public class PedidoService extends BaseServiceImpl<Pedido, Long>{
             entity.setFactura(factura);
         }
     }
-    //Funcion que busca los articulos mas vendidos
-
-    @Transactional
-    public void articulosMasPedidos(){
-        List<Pedido> pedidosList = pedidoRepository.findAll();
-        for (Pedido pedido : pedidosList) {
-            for (DetallePedido detallePedido : pedido.getDetallesPedido()) {
-                if (detallePedido.getArticuloManufacturado() != null) {
-
-                }
-            }
+    public Page<Pedido> findByCliente(Long Id, Pageable pageable) throws Exception {
+        try {
+            Page<Pedido> pedidosCliente = pedidoRepository.findByCliente(Id,pageable);
+            return pedidosCliente;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
         }
-
     }
     public PedidoService(BaseRepository<Pedido, Long> baseRepository, PedidoRepository pedidoRepository) {
         super(baseRepository);

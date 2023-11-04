@@ -7,10 +7,7 @@ import lombok.NoArgsConstructor;
 import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
-@Table(name="Domicilio",
-        uniqueConstraints = @UniqueConstraint(
-                columnNames = "numero"
-        ))
+@Table(name="Domicilio")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Cliente",
+			"name": "Personas",
 			"item": [
 				{
 					"name": "Get All",
@@ -15,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/paged",
+							"raw": "http://localhost:8080/api/v1/personas",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -24,8 +24,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
-								"paged"
+								"personas"
 							]
 						}
 					},
@@ -44,7 +43,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/paged?page=0&size=10",
+							"raw": "http://localhost:8080/api/v1/personas/paged?page=0&size=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -53,7 +52,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
+								"personas",
 								"paged"
 							],
 							"query": [
@@ -88,7 +87,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/1",
+							"raw": "http://localhost:8080/api/v1/personas/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -97,7 +96,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
+								"personas",
 								"1"
 							]
 						}
@@ -117,10 +116,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nombre\": \"Pedro\",\r\n  \"apellido\": \"string\",\r\n  \"telefono\": \"string\",\r\n  \"email\": \"gmail\",\r\n  \"usuario\": {\r\n    \"authId\": \"string\",\r\n    \"username\": \"string\"\r\n  },\r\n  \"domicilios\": [\r\n    {\r\n      \"numero\": \"1234\",\r\n      \"calle\": \"string\",\r\n      \"codigoPostal\": \"string\",\r\n      \"nroDpt\": \"string\",\r\n      \"pisoDto\": \"string\",\r\n      \"localidad\": {\r\n        \"id\": 1,\r\n        \"nombreLocalidad\": \"Ciudad\"\r\n    }\r\n    }\r\n  ]\r\n}\r\n"
+							"raw": "{\r\n  \"nombre\": \"Facundo\",\r\n  \"apellido\": \"Herrera\",\r\n  \"telefono\": \"2612587962\",\r\n  \"email\": \"23sda21@gmail.com\",\r\n  \"usuario\": {\r\n    \"username\": \"grdsdr\",\r\n    \"rol\": \"Cajero\"\r\n  },\r\n  \"domicilios\": [\r\n    {\r\n      \"numero\": \"6587\",\r\n      \"calle\": \"Alem\",\r\n      \"codigoPostal\": \"5895\",\r\n      \"nroDpt\": \"21\",\r\n      \"pisoDto\": \"4\",\r\n      \"localidad\": {\r\n            \"id\": 1,\r\n            \"nombreLocalidad\": \"Ciudad\"\r\n        }\r\n    }\r\n  ]\r\n}\r\n"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes",
+							"raw": "http://localhost:8080/api/v1/personas",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -129,7 +128,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes"
+								"personas"
 							]
 						}
 					},
@@ -151,7 +150,7 @@
 							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/1",
+							"raw": "http://localhost:8080/api/v1/personas/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -160,7 +159,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
+								"personas",
 								"1"
 							]
 						}
@@ -173,7 +172,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/36",
+							"raw": "http://localhost:8080/api/v1/personas/36",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -182,7 +181,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
+								"personas",
 								"36"
 							]
 						}
@@ -201,7 +200,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/searchByNombre?nombre=",
+							"raw": "http://localhost:8080/api/v1/personas/searchByNombre?nombre=",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -210,7 +209,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
+								"personas",
 								"searchByNombre"
 							],
 							"query": [
@@ -229,7 +228,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/rankingClientes?page =0&size=5",
+							"raw": "http://localhost:8080/api/v1/personas/rankingClientes?page =0&size=5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -238,7 +237,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
+								"personas",
 								"rankingClientes"
 							],
 							"query": [
@@ -261,7 +260,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/rankingClientesByDate?fechaInicio=2023-11-03&fechaFin=2023-11-04",
+							"raw": "http://localhost:8080/api/v1/personas/rankingClientesByDate?fechaInicio=2023-11-03&fechaFin=2023-11-10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -270,7 +269,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
+								"personas",
 								"rankingClientesByDate"
 							],
 							"query": [
@@ -280,7 +279,71 @@
 								},
 								{
 									"key": "fechaFin",
-									"value": "2023-11-04"
+									"value": "2023-11-10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/clientes?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllEmpleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/empleados?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"empleados"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
 								}
 							]
 						}
@@ -388,7 +451,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"denominacion\": \"string\",\r\n    \"descripcion\": \"string\",\r\n    \"precioVenta\": 2000.00,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"string\",\r\n        \"estadoRubro\": \"Alta\",\r\n        \"tipoRubro\": \"insumo\"\r\n    },\r\n    \"precioCompra\": 1500.00,\r\n    \"stockActual\": 1,\r\n    \"stockMinimo\": 1,\r\n    \"unidadMedida\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"string\",\r\n        \"abreviatura\": \"string\"\r\n    },\r\n    \"Url_Imagen\": \"urlImagen..\"\r\n}\r\n"
+							"raw": "{\r\n    \"denominacion\": \"string\",\r\n    \"descripcion\": \"string\",\r\n    \"precioVenta\": 2000.00,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 1\r\n    },\r\n    \"precioCompra\": 1500.00,\r\n    \"stockActual\": 1,\r\n    \"stockMinimo\": 1,\r\n    \"unidadMedida\": {\r\n        \"id\": 1\r\n    },\r\n    \"Url_Imagen\": \"urlImagen..\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/articulos/insumos",
@@ -420,7 +483,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"fechaAlta\": \"2023-10-23T15:34:36.485238\",\r\n    \"fechaBaja\": \"2023-10-23T15:34:24.962168\",\r\n    \"fechaModificacion\": \"2023-10-23T15:34:36.484235\",\r\n    \"denominacion\": \"string\",\r\n    \"descripcion\": \"string\",\r\n    \"precioVenta\": 100.0,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 1,\r\n        \"fechaAlta\": \"2023-10-23T15:27:05.55872\",\r\n        \"fechaBaja\": \"2023-10-23T15:26:40.991537\",\r\n        \"fechaModificacion\": \"2023-10-23T15:27:05.55872\",\r\n        \"denominacion\": \"string\",\r\n        \"estadoRubro\": \"Alta\",\r\n        \"tipoRubro\": \"insumo\"\r\n    },\r\n    \"precioCompra\": 50.0,\r\n    \"stockActual\": 50,\r\n    \"stockMinimo\": 0,\r\n    \"unidadMedida\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"string\",\r\n        \"abreviatura\": \"string\"\r\n    },\r\n    \"url_Imagen\": \"string\"\r\n}"
+							"raw": "{\r\n        \"id\": 1,\r\n        \"fechaAlta\": \"2023-11-09T16:16:43.283239\",\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"denominacion\": \"string\",\r\n        \"descripcion\": \"string\",\r\n        \"precioVenta\": 2000.0,\r\n        \"estadoArticulo\": \"Alta\",\r\n        \"rubro\": {\r\n            \"id\": 1,\r\n            \"fechaAlta\": \"2023-11-09T16:15:59.838723\",\r\n            \"fechaBaja\": null,\r\n            \"fechaModificacion\": null,\r\n            \"denominacion\": \"Gaseosas\",\r\n            \"estadoRubro\": \"Alta\",\r\n            \"tipoRubro\": \"manufacturado\"\r\n        },\r\n        \"precioCompra\": 1500.0,\r\n        \"stockActual\": 50,\r\n        \"stockMinimo\": 1,\r\n        \"unidadMedida\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"litro\",\r\n            \"abreviatura\": \"l\"\r\n        },\r\n        \"url_Imagen\": null\r\n    }"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/articulos/insumos/1",
@@ -1429,7 +1492,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/pedidos/673",
+							"raw": "http://localhost:8080/api/v1/pedidos/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1439,7 +1502,7 @@
 								"api",
 								"v1",
 								"pedidos",
-								"673"
+								"2"
 							]
 						}
 					},
@@ -1458,7 +1521,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n\r\n  \"pagado\": \"Si\", \r\n\r\n  \"estadoPedido\": \"A_Confirmar\", \r\n\r\n  \"tipoEnvio\": \"retira\", \r\n\r\n  \"formaPago\": \"efectivo\", \r\n\r\n  \"cliente\": { \r\n    \"id\": 1\r\n  }, \r\n\r\n  \"domicilio\": { \r\n    \"id\": 1 \r\n  }, \r\n\r\n  \"detallesPedido\": [ \r\n\r\n    {\r\n      \"cantidad\": 1,\r\n      \"articuloManufacturado\":{ \r\n         \"id\": 2\r\n      }\r\n    },\r\n    \r\n    {\r\n      \"cantidad\": 1, \r\n      \"articuloInsumo\":{ \r\n         \"id\": 1\r\n      } \r\n\r\n    }\r\n  ]\r\n\r\n} "
+							"raw": "{ \r\n\r\n  \"pagado\": \"Si\", \r\n\r\n  \"estadoPedido\": \"A_Confirmar\", \r\n\r\n  \"tipoEnvio\": \"retira\", \r\n\r\n  \"formaPago\": \"efectivo\", \r\n\r\n  \"persona\": { \r\n    \"id\": 1\r\n  }, \r\n\r\n  \"domicilio\": { \r\n    \"id\": 1 \r\n  }, \r\n\r\n  \"detallesPedido\": [ \r\n\r\n    // {\r\n    //   \"cantidad\": 1,\r\n    //   \"articuloManufacturado\":{ \r\n    //      \"id\": 2\r\n    //   }\r\n    // },\r\n    \r\n    {\r\n      \"cantidad\": 1, \r\n      \"articuloInsumo\":{ \r\n         \"id\": 1\r\n      } \r\n\r\n    }\r\n  ]\r\n\r\n} "
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/pedidos",
@@ -1716,7 +1779,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nombreLocalidad\": \"string2\"\r\n}"
+							"raw": "{\r\n  \"nombreLocalidad\": \"Ciudad\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/localidades",

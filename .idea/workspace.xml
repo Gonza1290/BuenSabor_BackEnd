@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="Historia de usuario - Ranking de productos con fechas">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/DTO/ClienteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/myDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/myDB.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Domicilio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Domicilio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ClienteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/PedidoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloInsumoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloInsumoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloManufacturadoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ArticuloManufacturadoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/PedidoService.java" afterDir="false" />
-    </list>
+    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="Historia de usuario - Movimientos Monetarios" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -541,7 +526,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699022260676</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Historia de usuario - Ranking de clientes">
+      <option name="closed" value="true" />
+      <created>1699129353472</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1699129353472</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Historia de usuario - Movimientos Monetarios">
+      <option name="closed" value="true" />
+      <created>1699131377602</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1699131377603</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -589,6 +590,8 @@
     <MESSAGE value="Links" />
     <MESSAGE value="Historia de usuario - Ranking de productos sin fechas" />
     <MESSAGE value="Historia de usuario - Ranking de productos con fechas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Historia de usuario - Ranking de productos con fechas" />
+    <MESSAGE value="Historia de usuario - Ranking de clientes" />
+    <MESSAGE value="Historia de usuario - Movimientos Monetarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Historia de usuario - Movimientos Monetarios" />
   </component>
 </project>

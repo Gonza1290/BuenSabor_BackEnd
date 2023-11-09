@@ -1,7 +1,9 @@
 package com.example.tp_final.Entidades;
 
 import com.example.tp_final.Enumeraciones.Estado;
+import com.example.tp_final.Enumeraciones.FormaPago;
 import com.example.tp_final.Enumeraciones.Pagado;
+import com.example.tp_final.Enumeraciones.Rol;
 import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -11,16 +13,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="Usuario")
+@Table(name="Usuario", uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Usuario extends BaseWithDate implements Serializable {
+public class Usuario implements Serializable {
 
+    @Id
+    @GeneratedValue
+    Long Id;
     @NotNull
-    private String authId;
+    String username;
+    String password;
     @NotNull
-    private String username;
+    @Enumerated(EnumType.STRING)
+    private Rol rol;
 }

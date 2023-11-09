@@ -75,8 +75,8 @@ public class Pedido extends Base {
     //Relacion N a 1 con la clase Cliente
     @NotNull
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_cliente")
-    private Cliente cliente;
+    @JoinColumn(name = "id_persona")
+    private Persona persona;
 
     //Relacion N a 1 con la clase domicilio
     @NotNull

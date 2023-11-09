@@ -1,7 +1,7 @@
 package com.example.tp_final.Controllers;
 
-import com.example.tp_final.Entidades.Cliente;
-import com.example.tp_final.Services.ClienteService;
+import com.example.tp_final.Entidades.Persona;
+import com.example.tp_final.Services.PersonaService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,9 +11,9 @@ import java.time.LocalDate;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/clientes")
+@RequestMapping(path = "api/v1/personas")
 
-public class ClienteController extends BaseControllerImpl<Cliente, ClienteService>{
+public class PersonaController extends BaseControllerImpl<Persona, PersonaService>{
 
     @GetMapping("/searchByNombre")
     public ResponseEntity<?> searchByNombre(@RequestParam String nombre, Pageable pageable) {
@@ -21,6 +21,22 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
             return ResponseEntity.status(HttpStatus.OK).body(servicio.searchByNombre(nombre,pageable));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente más tarde.\"}");
+        }
+    }
+    @GetMapping("/clientes")
+    public ResponseEntity<?> getAllClientes( Pageable pageable) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.getAllClientes(pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+    @GetMapping("/empleados")
+    public ResponseEntity<?> geAllEmpleados( Pageable pageable) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.getAllEmpleados(pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
     @GetMapping("/rankingClientes")

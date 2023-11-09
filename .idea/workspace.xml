@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="Historia de usuario - Movimientos Monetarios" />
+    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="Postman">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Enumeraciones/Rol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/myDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/myDB.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ArticuloInsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ArticuloInsumoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Controllers/PersonaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/PersonaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/PersonaService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,10 +48,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -74,24 +86,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gonza/OneDrive/UTN/3º/Segundo Semestre/Desarrollo de Software/BackEnd/Trabajo Practico API/Api con Paginacion&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Gonza/OneDrive/UTN/3º/Segundo Semestre/Desarrollo de Software/BackEnd/Spring Security/spring-boot-jwt-authentication-main",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.completion"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Gonza\OneDrive\UTN\3º\Segundo Semestre\Desarrollo de Software\Trabajo Final\BuenSabor_BackEnd\src\test\java\com\example\tp_final" />
@@ -542,7 +554,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699131377603</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Postman">
+      <option name="closed" value="true" />
+      <created>1699549550509</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1699549550509</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -592,6 +612,7 @@
     <MESSAGE value="Historia de usuario - Ranking de productos con fechas" />
     <MESSAGE value="Historia de usuario - Ranking de clientes" />
     <MESSAGE value="Historia de usuario - Movimientos Monetarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Historia de usuario - Movimientos Monetarios" />
+    <MESSAGE value="Postman" />
+    <option name="LAST_COMMIT_MESSAGE" value="Postman" />
   </component>
 </project>

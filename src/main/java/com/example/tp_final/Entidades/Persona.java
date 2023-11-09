@@ -1,37 +1,35 @@
 package com.example.tp_final.Entidades;
 
-import com.example.tp_final.DTO.ArticuloInsumoDTO;
 import com.example.tp_final.DTO.ClienteDTO;
 import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="Cliente",
+@Table(name="Persona",
         uniqueConstraints = @UniqueConstraint(
                 columnNames = "email"
         ))
-//Anotaciones para consulta personalizada, mapeando en articuloInsumoDTO
+//Anotaciones para consulta personalizada, mapeando en ClienteDTO
 @NamedNativeQuery(
-        name = "Cliente.rankingClientes",
-        query = "SELECT C.NOMBRE AS nombre, COUNT (*) AS totalPedidos, SUM(P.TOTAL) AS importeTotal\n" +
-                "FROM CLIENTE AS C, PEDIDO AS P\n" +
-                "WHERE C.ID = P.ID_CLIENTE \n" +
-                "GROUP BY nombre\n" +
+        name = "Persona.rankingClientes",
+        query = "SELECT PERSONA.ID, PERSONA.NOMBRE AS nombre, COUNT (*) AS totalPedidos, SUM(PEDIDO.TOTAL) AS importeTotal\n" +
+                "FROM PERSONA, PEDIDO, USUARIO AS U\n" +
+                "WHERE PERSONA.ID = PEDIDO.ID_PERSONA AND U.ID = PERSONA. USUARIO_ID AND U.ROL = 'Cliente'\n" +
+                "GROUP BY PERSONA.ID\n" +
                 "ORDER BY totalPedidos DESC",
         resultSetMapping = "Mapping.ClienteDTO")
 
 @NamedNativeQuery(
-        name = "Cliente.rankingClientesByDate",
-        query = "SELECT C.NOMBRE AS nombre, COUNT (*) AS totalPedidos, SUM(P.TOTAL) AS importeTotal\n" +
-                "FROM CLIENTE AS C, PEDIDO AS P\n" +
-                "WHERE C.ID = P.ID_CLIENTE AND P.FECHA_PEDIDO BETWEEN :fechaInicio AND :fechaFin \n" +
-                "GROUP BY nombre\n" +
+        name = "Persona.rankingClientesByDate",
+        query = "SELECT PERSONA.ID, PERSONA.NOMBRE AS nombre, COUNT (*) AS totalPedidos, SUM(PEDIDO.TOTAL) AS importeTotal\n" +
+                "FROM PERSONA, PEDIDO, USUARIO AS U\n" +
+                "WHERE PERSONA.ID = PEDIDO.ID_PERSONA AND U.ID = PERSONA. USUARIO_ID AND U.ROL = 'Cliente' AND PEDIDO.FECHA_PEDIDO BETWEEN :fechaInicio AND :fechaFin \n" +
+                "GROUP BY PERSONA.ID\n" +
                 "ORDER BY totalPedidos DESC",
         resultSetMapping = "Mapping.ClienteDTO")
 
@@ -54,7 +52,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cliente extends BaseWithDate implements Serializable {
+public class Persona extends BaseWithDate implements Serializable {
 
     @NotNull
     private String nombre;

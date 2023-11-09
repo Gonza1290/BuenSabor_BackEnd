@@ -1,16 +1,13 @@
 package com.example.tp_final.Controllers;
 
 import com.example.tp_final.Entidades.ArticuloInsumo;
-import com.example.tp_final.Entidades.Cliente;
 import com.example.tp_final.Services.ArticuloInsumoService;
-import com.example.tp_final.Services.ClienteService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @RestController
 @CrossOrigin(origins = "*")

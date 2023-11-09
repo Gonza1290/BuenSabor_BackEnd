@@ -1,11 +1,9 @@
 package com.example.tp_final.Services;
 
 import com.example.tp_final.DTO.ClienteDTO;
-import com.example.tp_final.Entidades.ArticuloInsumo;
-import com.example.tp_final.Entidades.Cliente;
-import com.example.tp_final.Entidades.Pedido;
+import com.example.tp_final.Entidades.Persona;
 import com.example.tp_final.Repositories.BaseRepository;
-import com.example.tp_final.Repositories.ClienteRepository;
+import com.example.tp_final.Repositories.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,29 +12,44 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Optional;
 
 @Service
-public class ClienteService extends BaseServiceImpl<Cliente, Long>{
+public class PersonaService extends BaseServiceImpl<Persona, Long>{
     @Autowired
-    private ClienteRepository clienteRepository;
+    private PersonaRepository personaRepository;
 
-    public ClienteService(BaseRepository<Cliente, Long> baseRepository, ClienteRepository clienteRepository) {
+    public PersonaService(BaseRepository<Persona, Long> baseRepository, PersonaRepository personaRepository) {
         super(baseRepository);
-        this.clienteRepository = clienteRepository;
+        this.personaRepository = personaRepository;
     }
 
-    public Page<Cliente> searchByNombre(String nombre, Pageable pageable) throws Exception {
+    public Page<Persona> searchByNombre(String nombre, Pageable pageable) throws Exception {
         try {
-            Page<Cliente> clientes = clienteRepository.findByNombreContaining(nombre,pageable);
+            Page<Persona> personas = personaRepository.findByNombreIgnoreCaseContaining(nombre,pageable);
+            return personas;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+    public Page<Persona> getAllClientes(Pageable pageable) throws Exception {
+        try {
+            Page<Persona> clientes = personaRepository.getAllClientes(pageable);
             return clientes;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+    public Page<Persona> getAllEmpleados(Pageable pageable) throws Exception {
+        try {
+            Page<Persona> empleados = personaRepository.getAllEmpleados(pageable);
+            return empleados;
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }
     public Page<ClienteDTO> rankingClientes( Pageable pageable) throws Exception {
         try {
-            Page<ClienteDTO> clienteDTOS = clienteRepository.rankingClientes(pageable);
+            Page<ClienteDTO> clienteDTOS = personaRepository.rankingClientes(pageable);
             return clienteDTOS;
         }catch (Exception e){
             throw new Exception(e.getMessage());
@@ -46,7 +59,7 @@ public class ClienteService extends BaseServiceImpl<Cliente, Long>{
         try {
             LocalDateTime fechaI = fechaInicio.atStartOfDay();
             LocalDateTime fechaF = LocalDateTime.of(fechaFin, LocalTime.of(23, 59, 59, 999_999_999));
-            Page<ClienteDTO> clienteDTOS = clienteRepository.rankingClientesByDate(fechaI,fechaF,pageable);
+            Page<ClienteDTO> clienteDTOS = personaRepository.rankingClientesByDate(fechaI,fechaF,pageable);
             return clienteDTOS;
         }catch (Exception e){
             throw new Exception(e.getMessage());
@@ -54,13 +67,13 @@ public class ClienteService extends BaseServiceImpl<Cliente, Long>{
     }
 
     @Override
-    public Cliente save(Cliente entity) throws Exception {
+    public Persona save(Persona entity) throws Exception {
         entity.setFechaAlta(LocalDateTime.now());
         return super.save(entity);
     }
 
     @Override
-    public Cliente update(Long aLong, Cliente entity) throws Exception {
+    public Persona update(Long aLong, Persona entity) throws Exception {
         entity.setFechaModificacion(LocalDateTime.now());
         return super.update(aLong, entity);
     }

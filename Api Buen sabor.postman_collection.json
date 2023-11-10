@@ -1,0 +1,1872 @@
+{
+	"info": {
+		"_postman_id": "8a2e93f7-4cea-497c-8f8b-72e147bc0ed9",
+		"name": "Api Buen sabor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30226984"
+	},
+	"item": [
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/paged?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Pedro\",\r\n  \"apellido\": \"Morales\",\r\n  \"telefono\": \"26587596\",\r\n  \"email\": \"PedroMorales@gmail.com\",\r\n  \"usuario\": {\r\n    \"username\": \"Pedro23\",\r\n    \"rol\": \"Cocinero\"\r\n  },\r\n  \"domicilios\": [\r\n    {\r\n      \"numero\": \"5698\",\r\n      \"calle\": \"Rioja\",\r\n      \"codigoPostal\": \"5234\",\r\n      \"nroDpt\": \"32\",\r\n      \"pisoDto\": \"5\",\r\n      \"localidad\": {\r\n            \"id\": 2\r\n        }\r\n    }\r\n  ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SeachByName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/searchByNombre?nombre=facundo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"searchByNombre"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "facundo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rankingClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/rankingClientes?page =0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"rankingClientes"
+							],
+							"query": [
+								{
+									"key": "page ",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rankingClientesByDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/rankingClientesByDate?fechaInicio=2023-11-03&fechaFin=2023-11-10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"rankingClientesByDate"
+							],
+							"query": [
+								{
+									"key": "fechaInicio",
+									"value": "2023-11-03"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2023-11-10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/clientes?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllEmpleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/empleados?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"empleados"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Articulo Insumo",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Queso Cheddar\",\r\n    \"descripcion\": \"Queso Cheddar de primera calidad\",\r\n    \"precioVenta\": 300.00,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 8\r\n    },\r\n    \"precioCompra\": 150.00,\r\n    \"stockActual\": 10,\r\n    \"stockMinimo\": 1,\r\n    \"unidadMedida\": {\r\n        \"id\": 3\r\n    },\r\n    \"Url_Imagen\": \"urlImagen..\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"fechaAlta\": \"2023-11-10T10:25:39.853008\",\r\n    \"fechaBaja\": null,\r\n    \"fechaModificacion\": \"2023-11-10T10:38:31.753806\",\r\n    \"denominacion\": \"Lechuga\",\r\n    \"descripcion\": \"Lechuga Fresca\",\r\n    \"precioVenta\": 100.0,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 4\r\n    },\r\n    \"precioCompra\": 50.0,\r\n    \"stockActual\": 10,\r\n    \"stockMinimo\": 3,\r\n    \"unidadMedida\": {\r\n        \"id\": 2,\r\n        \"denominacion\": \"gramo\",\r\n        \"abreviatura\": \"g\"\r\n    },\r\n    \"url_Imagen\": null\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/129",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"129"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SeachByDenominacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/searchByDenominacion?denominacion=tomate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"searchByDenominacion"
+							],
+							"query": [
+								{
+									"key": "denominacion",
+									"value": "tomate"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchSoldest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/searchsoldest?page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"searchsoldest"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchSoldestByDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/searchSoldestByDate?fechaInicio=2023-11-03&fechaFin=2023-11-04&page=0&size=5\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"insumos",
+								"searchSoldestByDate"
+							],
+							"query": [
+								{
+									"key": "fechaInicio",
+									"value": "2023-11-03"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2023-11-04"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Articulo Manufacturado",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Hamburguesa Doble\",\r\n    \"descripcion\": \"Hamburguesa con 2 medallon de carne, tomate, lechuga, mayonesa y cheddar\",\r\n    \"Url_Imagen\": \"string\",\r\n    \"precioVenta\": null,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 3\r\n    },\r\n    \"tiempoEstimadoCocina\": 25,\r\n    \"receta\": \"null\",\r\n    \"detallesArtManufacturado\": [\r\n        {\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 1\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 2,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 2\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 3\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 2,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 4\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 6\r\n            }\r\n        }\r\n    ]\r\n    \r\n    \r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"fechaAlta\": \"2023-11-10T10:45:15.539763\",\r\n    \"fechaBaja\": null,\r\n    \"fechaModificacion\": null,\r\n    \"denominacion\": \"Hamburguesa Doble\",\r\n    \"descripcion\": \"Hamburguesa con 2 medallon de carne, tomate, lechuga, mayonesa y cheddar\",\r\n    \"precioVenta\": 3000.0,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 3,\r\n        \"fechaAlta\": \"2023-11-10T10:15:42.184045\",\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"denominacion\": \"Hamburguesa\",\r\n        \"estadoRubro\": \"Alta\",\r\n        \"tipoRubro\": \"manufacturado\"\r\n    },\r\n    \"tiempoEstimadoCocina\": 25,\r\n    \"precioCosto\": 1125.0,\r\n    \"receta\": \"null\",\r\n    \"detallesArtManufacturado\": [\r\n        {\r\n            \"id\": 6,\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\": {\r\n                \"id\": 1,\r\n                \"fechaAlta\": \"2023-11-10T10:21:55.277399\",\r\n                \"fechaBaja\": null,\r\n                \"fechaModificacion\": null,\r\n                \"denominacion\": \"Tomate\",\r\n                \"descripcion\": \"Tomate fresco de huerto\",\r\n                \"precioVenta\": 100.0,\r\n                \"estadoArticulo\": \"Alta\",\r\n                \"rubro\": {\r\n                    \"id\": 4,\r\n                    \"fechaAlta\": \"2023-11-10T10:15:59.338839\",\r\n                    \"fechaBaja\": null,\r\n                    \"fechaModificacion\": null,\r\n                    \"denominacion\": \"Vegetales\",\r\n                    \"estadoRubro\": \"Alta\",\r\n                    \"tipoRubro\": \"insumo\"\r\n                },\r\n                \"precioCompra\": 25.0,\r\n                \"stockActual\": 10,\r\n                \"stockMinimo\": 3,\r\n                \"unidadMedida\": {\r\n                    \"id\": 3,\r\n                    \"denominacion\": \"kilogramo\",\r\n                    \"abreviatura\": \"Kg\"\r\n                },\r\n                \"url_Imagen\": null\r\n            }\r\n        },\r\n        {\r\n            \"id\": 7,\r\n            \"cantidad\": 2,\r\n            \"articuloInsumo\": {\r\n                \"id\": 2,\r\n                \"fechaAlta\": \"2023-11-10T10:21:55.277399\",\r\n                \"fechaBaja\": null,\r\n                \"fechaModificacion\": \"2023-11-10T10:35:40.766887\",\r\n                \"denominacion\": \"Pan Hamburguesa\",\r\n                \"descripcion\": \"Pan recien hecho\",\r\n                \"precioVenta\": 300.0,\r\n                \"estadoArticulo\": \"Alta\",\r\n                \"rubro\": {\r\n                    \"id\": 7,\r\n                    \"fechaAlta\": \"2023-11-10T10:17:05.437128\",\r\n                    \"fechaBaja\": null,\r\n                    \"fechaModificacion\": null,\r\n                    \"denominacion\": \"Panificado\",\r\n                    \"estadoRubro\": \"Alta\",\r\n                    \"tipoRubro\": \"insumo\"\r\n                },\r\n                \"precioCompra\": 150.0,\r\n                \"stockActual\": 10,\r\n                \"stockMinimo\": 3,\r\n                \"unidadMedida\": {\r\n                    \"id\": 2,\r\n                    \"denominacion\": \"gramo\",\r\n                    \"abreviatura\": \"g\"\r\n                },\r\n                \"url_Imagen\": null\r\n            }\r\n        },\r\n        {\r\n            \"id\": 8,\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\": {\r\n                \"id\": 3,\r\n                \"fechaAlta\": \"2023-11-10T10:25:39.853008\",\r\n                \"fechaBaja\": null,\r\n                \"fechaModificacion\": \"2023-11-10T10:37:01.280625\",\r\n                \"denominacion\": \"Mayonesa\",\r\n                \"descripcion\": \"Mayonesa de primera marca\",\r\n                \"precioVenta\": 100.0,\r\n                \"estadoArticulo\": \"Alta\",\r\n                \"rubro\": {\r\n                    \"id\": 5,\r\n                    \"fechaAlta\": \"2023-11-10T10:16:13.560007\",\r\n                    \"fechaBaja\": null,\r\n                    \"fechaModificacion\": null,\r\n                    \"denominacion\": \"Aderesos\",\r\n                    \"estadoRubro\": \"Alta\",\r\n                    \"tipoRubro\": \"insumo\"\r\n                },\r\n                \"precioCompra\": 150.0,\r\n                \"stockActual\": 10,\r\n                \"stockMinimo\": 3,\r\n                \"unidadMedida\": {\r\n                    \"id\": 2,\r\n                    \"denominacion\": \"gramo\",\r\n                    \"abreviatura\": \"g\"\r\n                },\r\n                \"url_Imagen\": null\r\n            }\r\n        },\r\n        {\r\n            \"id\": 9,\r\n            \"cantidad\": 2,\r\n            \"articuloInsumo\": {\r\n                \"id\": 4,\r\n                \"fechaAlta\": \"2023-11-10T10:28:01.567856\",\r\n                \"fechaBaja\": null,\r\n                \"fechaModificacion\": null,\r\n                \"denominacion\": \"Medallon de Hamburguesa\",\r\n                \"descripcion\": \"Medallon de Hamburguesa de primera marca\",\r\n                \"precioVenta\": 500.0,\r\n                \"estadoArticulo\": \"Alta\",\r\n                \"rubro\": {\r\n                    \"id\": 8,\r\n                    \"fechaAlta\": \"2023-11-10T10:27:52.839325\",\r\n                    \"fechaBaja\": null,\r\n                    \"fechaModificacion\": null,\r\n                    \"denominacion\": \"Carnes\",\r\n                    \"estadoRubro\": \"Alta\",\r\n                    \"tipoRubro\": \"insumo\"\r\n                },\r\n                \"precioCompra\": 250.0,\r\n                \"stockActual\": 10,\r\n                \"stockMinimo\": 3,\r\n                \"unidadMedida\": {\r\n                    \"id\": 4,\r\n                    \"denominacion\": \"Unidad\",\r\n                    \"abreviatura\": \"U\"\r\n                },\r\n                \"url_Imagen\": null\r\n            }\r\n        },\r\n        {\r\n            \"id\": 10,\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\": {\r\n                \"id\": 6,\r\n                \"fechaAlta\": \"2023-11-10T10:25:39.853008\",\r\n                \"fechaBaja\": null,\r\n                \"fechaModificacion\": \"2023-11-10T10:39:21.097526\",\r\n                \"denominacion\": \"Queso Cheddar\",\r\n                \"descripcion\": \"Queso Cheddar de primera calidad\",\r\n                \"precioVenta\": 300.0,\r\n                \"estadoArticulo\": \"Alta\",\r\n                \"rubro\": {\r\n                    \"id\": 8,\r\n                    \"fechaAlta\": \"2023-11-10T10:27:52.839325\",\r\n                    \"fechaBaja\": null,\r\n                    \"fechaModificacion\": null,\r\n                    \"denominacion\": \"Carnes\",\r\n                    \"estadoRubro\": \"Alta\",\r\n                    \"tipoRubro\": \"insumo\"\r\n                },\r\n                \"precioCompra\": 150.0,\r\n                \"stockActual\": 10,\r\n                \"stockMinimo\": 1,\r\n                \"unidadMedida\": {\r\n                    \"id\": 2,\r\n                    \"denominacion\": \"gramo\",\r\n                    \"abreviatura\": \"g\"\r\n                },\r\n                \"url_Imagen\": null\r\n            }\r\n        }\r\n    ],\r\n    \"url_Imagen\": null\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SeachByDenominacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/searchByDenominacion?denominacion=pizza",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"searchByDenominacion"
+							],
+							"query": [
+								{
+									"key": "denominacion",
+									"value": "pizza"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchSoldest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/searchsoldest?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"searchsoldest"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchSoldestByDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articulos/manufacturados/searchSoldestByDate?fechaInicio=2023-11-03&fechaFin=2023-11-04&page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articulos",
+								"manufacturados",
+								"searchSoldestByDate"
+							],
+							"query": [
+								{
+									"key": "fechaInicio",
+									"value": "2023-11-03"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2023-11-04"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rubro",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros/65",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros",
+								"65"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Carnes\",\r\n    \"estadoRubro\": \"Alta\",\r\n    \"tipoRubro\": \"insumo\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 65,\r\n    \"fechaAlta\": \"2023-11-02T11:43:12.908509\",\r\n    \"fechaBaja\": null,\r\n    \"fechaModificacion\": null,\r\n    \"denominacion\": \"Pizzas\",\r\n    \"estadoRubro\": \"Alta\",\r\n    \"tipoRubro\": \"manufacturado\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros/65",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros",
+								"65"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unidad Medida",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Unidad\",\r\n    \"abreviatura\": \"U\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unidadmedidas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unidadmedidas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Factura",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Gaseosas\",\r\n    \"estadoRubro\": \"Alta\",\r\n    \"tipoRubro\": \"insumo\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\r\n  \"pagado\": \"Si\", \r\n\r\n  \"estadoPedido\": \"A_Confirmar\", \r\n\r\n  \"tipoEnvio\": \"retira\", \r\n\r\n  \"formaPago\": \"efectivo\", \r\n\r\n  \"persona\": { \r\n    \"id\": 1\r\n  }, \r\n\r\n  \"domicilio\": { \r\n    \"id\": 1 \r\n  }, \r\n\r\n  \"detallesPedido\": [ \r\n\r\n    {\r\n      \"cantidad\": 2,\r\n      \"articuloManufacturado\":{ \r\n         \"id\": 8\r\n      }\r\n    }\r\n    \r\n    // {\r\n    //   \"cantidad\": 1, \r\n    //   \"articuloInsumo\":{ \r\n    //      \"id\": 1\r\n    //   } \r\n\r\n    // }\r\n  ]\r\n\r\n} "
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByCliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/findByCliente/1?page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"findByCliente",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movimientosMonerios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/movimientosMonerios?page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"movimientosMonerios"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movimientosMoneriosByDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/movimientosMoneriosByDate?fechaInicio=2023-11-04&fechaFin=2023-11-04&page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"movimientosMoneriosByDate"
+							],
+							"query": [
+								{
+									"key": "fechaInicio",
+									"value": "2023-11-04"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2023-11-04"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Localidad",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades/paged?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombreLocalidad\": \"Godoy Cruz\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

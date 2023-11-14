@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Repository
 public interface PedidoRepository extends BaseRepository<Pedido,Long> {
-    @Query(value = "SELECT * FROM PEDIDO AS P WHERE P.ID_CLIENTE = ?1",
+    @Query(value = "SELECT * FROM PEDIDO AS P WHERE P.ID_PERSONA = ?1",
             nativeQuery = true)
     Page<Pedido> findByCliente(Long Id, Pageable pageable);
     @Query(nativeQuery = true)

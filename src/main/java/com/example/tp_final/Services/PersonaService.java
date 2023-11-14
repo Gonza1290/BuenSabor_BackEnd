@@ -7,6 +7,7 @@ import com.example.tp_final.Repositories.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -17,10 +18,12 @@ import java.time.LocalTime;
 public class PersonaService extends BaseServiceImpl<Persona, Long>{
     @Autowired
     private PersonaRepository personaRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public PersonaService(BaseRepository<Persona, Long> baseRepository, PersonaRepository personaRepository) {
+    public PersonaService(BaseRepository<Persona, Long> baseRepository, PersonaRepository personaRepository, PasswordEncoder passwordEncoder) {
         super(baseRepository);
         this.personaRepository = personaRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public Page<Persona> searchByNombre(String nombre, Pageable pageable) throws Exception {
@@ -69,6 +72,7 @@ public class PersonaService extends BaseServiceImpl<Persona, Long>{
     @Override
     public Persona save(Persona entity) throws Exception {
         entity.setFechaAlta(LocalDateTime.now());
+        entity.getUsuario().setPassword(passwordEncoder.encode( entity.getUsuario().getPassword()));
         return super.save(entity);
     }
 

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Builder
 @Table(name="Persona",
         uniqueConstraints = @UniqueConstraint(
                 columnNames = "email"

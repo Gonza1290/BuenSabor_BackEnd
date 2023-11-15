@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="Postman con nuevas requests">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Auth/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Auth/AuthResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Auth/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Auth/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Auth/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Config/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Jwt/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Jwt/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/myDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/myDB.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Entidades/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Enumeraciones/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Enumeraciones/Rol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/PedidoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Repositories/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/PersonaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Services/PersonaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/TpFinalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/TpFinalApplication.java" afterDir="false" />
-    </list>
+    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="Spring security jws" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +110,7 @@
       <recent name="com.example.tp_final.Config" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.ArticuloInsumoControllerTest.searchByDenominacion">
     <configuration name="ArticuloInsumoControllerTest.searchByDenominacion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -591,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699560577005</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Spring security jws">
+      <option name="closed" value="true" />
+      <created>1699974568467</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1699974568467</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -645,6 +632,7 @@
     <MESSAGE value="Modificacion al clase cliente a persona" />
     <MESSAGE value="Modificacion de clase cliente a persona" />
     <MESSAGE value="Postman con nuevas requests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Postman con nuevas requests" />
+    <MESSAGE value="Spring security jws" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spring security jws" />
   </component>
 </project>

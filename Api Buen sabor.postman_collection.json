@@ -13,16 +13,11 @@
 					"name": "Get All",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "password",
-									"value": "",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "",
+									"key": "token",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -51,6 +46,16 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -92,6 +97,16 @@
 				{
 					"name": "Get One",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -121,6 +136,16 @@
 				{
 					"name": "Create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -131,7 +156,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nombre\": \"Pedro\",\r\n  \"apellido\": \"Morales\",\r\n  \"telefono\": \"26587596\",\r\n  \"email\": \"PedroMorales@gmail.com\",\r\n  \"usuario\": {\r\n    \"username\": \"Pedro23\",\r\n    \"rol\": \"Cocinero\"\r\n  },\r\n  \"domicilios\": [\r\n    {\r\n      \"numero\": \"5698\",\r\n      \"calle\": \"Rioja\",\r\n      \"codigoPostal\": \"5234\",\r\n      \"nroDpt\": \"32\",\r\n      \"pisoDto\": \"5\",\r\n      \"localidad\": {\r\n            \"id\": 2\r\n        }\r\n    }\r\n  ]\r\n}\r\n"
+							"raw": "{\r\n  \"nombre\": \"Delivery\",\r\n  \"apellido\": \"Delivery\",\r\n  \"telefono\": \"12345\",\r\n  \"email\": \"Delivery@gmail.com\",\r\n  \"usuario\": {\r\n    \"username\": \"Delivery\",\r\n    \"rol\": \"Delivery\",\r\n    \"password\": \"password\"\r\n  },\r\n  \"domicilios\": [\r\n    {\r\n      \"numero\": \"1234\",\r\n      \"calle\": \"calle\",\r\n      \"codigoPostal\": \"1234\",\r\n      \"nroDpt\": \"1\",\r\n      \"pisoDto\": \"1\",\r\n      \"localidad\": {\r\n          \"id\": 1\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/personas",
@@ -152,6 +177,16 @@
 				{
 					"name": "Update",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -162,10 +197,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+							"raw": "    {\r\n        \"id\": 129,\r\n        \"fechaAlta\": null,\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"nombre\": \"Cliente\",\r\n        \"apellido\": \"Cliente\",\r\n        \"telefono\": \"1234\",\r\n        \"email\": \"Cliente\",\r\n        \"usuario\": {\r\n            \"username\": \"Cliente\",\r\n            \"password\": \"$2a$10$0AJ9Byy5Sev145CD09ihW.Pa72b2hm2YKYnmITZ1d4zQvz8apvH4u\",\r\n            \"rol\": \"Cliente\",\r\n            \"id\": 6352,\r\n            \"enabled\": true,\r\n            \"accountNonLocked\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonExpired\": true,\r\n            \"authorities\": [\r\n                {\r\n                    \"authority\": \"Cliente\"\r\n                }\r\n            ]\r\n        },\r\n        \"domicilios\": [\r\n            {\r\n                \"id\": 129,\r\n                \"numero\": \"1234\",\r\n                \"calle\": \"calle\",\r\n                \"codigoPostal\": \"1234\",\r\n                \"nroDpt\": \"1\",\r\n                \"pisoDto\": \"1\",\r\n                \"localidad\": {\r\n                    \"id\": 1,\r\n                    \"nombreLocalidad\": \"Ciudad\"\r\n                }\r\n            }\r\n        ]\r\n    }"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/personas/1",
+							"raw": "http://localhost:8080/api/v1/personas/129",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -175,7 +210,7 @@
 								"api",
 								"v1",
 								"personas",
-								"1"
+								"129"
 							]
 						}
 					},
@@ -184,10 +219,20 @@
 				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/personas/36",
+							"raw": "http://localhost:8080/api/v1/personas/33",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -197,7 +242,7 @@
 								"api",
 								"v1",
 								"personas",
-								"36"
+								"33"
 							]
 						}
 					},
@@ -206,6 +251,16 @@
 				{
 					"name": "SeachByName",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -215,7 +270,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/personas/searchByNombre?nombre=facundo",
+							"raw": "http://localhost:8080/api/v1/personas/searchByNombre?nombre=cliente",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -230,7 +285,7 @@
 							"query": [
 								{
 									"key": "nombre",
-									"value": "facundo"
+									"value": "cliente"
 								}
 							]
 						}
@@ -240,6 +295,16 @@
 				{
 					"name": "rankingClientes",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -272,6 +337,16 @@
 				{
 					"name": "rankingClientesByDate",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -304,6 +379,16 @@
 				{
 					"name": "GetAllClientes",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -336,6 +421,16 @@
 				{
 					"name": "GetAllEmpleados",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -373,6 +468,9 @@
 				{
 					"name": "Get All",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -395,6 +493,9 @@
 				{
 					"name": "Get all paged",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -544,6 +645,9 @@
 				{
 					"name": "SeachByDenominacion",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -652,6 +756,9 @@
 				{
 					"name": "Get All",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -674,6 +781,9 @@
 				{
 					"name": "Get all paged",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -823,6 +933,9 @@
 				{
 					"name": "SeachByDenominacion",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -852,6 +965,16 @@
 				{
 					"name": "SearchSoldest",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnb256YUBnbWFpbC5jb20iLCJpYXQiOjE2OTk2MzQ1ODgsImV4cCI6MTY5OTYzNjAyOH0.UbQYjjm4PcNHfuXKlmMf74bVYX2N8n6pPNUbzYIsQKA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -936,6 +1059,16 @@
 				{
 					"name": "Get All",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1106,6 +1239,16 @@
 				{
 					"name": "Get All",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1276,6 +1419,16 @@
 				{
 					"name": "Get All",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1297,6 +1450,16 @@
 				{
 					"name": "Get all paged",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1334,6 +1497,16 @@
 				{
 					"name": "Get One",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1354,39 +1527,18 @@
 					"response": []
 				},
 				{
-					"name": "Create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"denominacion\": \"Gaseosas\",\r\n    \"estadoRubro\": \"Alta\",\r\n    \"tipoRubro\": \"insumo\"\r\n}\r\n"
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/v1/facturas",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"v1",
-								"facturas"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -1409,6 +1561,16 @@
 				{
 					"name": "Update",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -1419,7 +1581,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/facturas/1",
@@ -1446,6 +1608,16 @@
 				{
 					"name": "Get All",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1467,6 +1639,16 @@
 				{
 					"name": "Get all paged",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1504,6 +1686,16 @@
 				{
 					"name": "Get One",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1611,6 +1803,16 @@
 				{
 					"name": "findByCliente",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1726,6 +1928,9 @@
 				{
 					"name": "Get All",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1747,6 +1952,9 @@
 				{
 					"name": "Get all paged",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1776,6 +1984,38 @@
 									"value": null,
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"nombreLocalidad\": \"Ciudad\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"1"
 							]
 						}
 					},
@@ -1833,34 +2073,92 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "Jwt",
+			"item": [
 				{
-					"name": "Update",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+					"name": "register cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setGlobalVariable(\"token\", data.token)"
+								],
+								"type": "text/javascript"
 							}
-						],
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Dalia\",\r\n    \"apellido\": \"Adam\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"DaliaAdam@gmail.com\",\r\n    \"password\": \"Otrapassword\", \r\n    \"estadoUsuario\": \"Alta\",\r\n    \"comentario\": \"Comentario del Cliente\"\r\n    \r\n}"
+							"raw": "{\r\n    \"username\": \"Cliente\",\r\n    \"password\": \"password\",\r\n    \"nombre\": \"Cliente\",\r\n    \"apellido\": \"Cliente\",\r\n    \"telefono\": \"343523423\",\r\n    \"email\": \"Cliente\",\r\n    \"domicilios\": [\r\n    {\r\n      \"numero\": \"1234\",\r\n      \"calle\": \"calle\",\r\n      \"codigoPostal\": \"1234\",\r\n      \"nroDpt\": \"1\",\r\n      \"pisoDto\": \"1\",\r\n      \"localidad\": {\r\n        \"id\": 1,\r\n        \"nombreLocalidad\": \"Ciudad\"\r\n    }\r\n    }\r\n    ]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/localidades/1",
+							"raw": "http://localhost:8080/auth/register",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"api",
-								"v1",
-								"localidades",
-								"1"
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setGlobalVariable(\"token\", data.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"username\": \"Administrador\",\r\n//     \"password\": \"password\"\r\n// }\r\n// {\r\n//     \"username\": \"Cliente\",\r\n//     \"password\": \"password\"\r\n// }\r\n{\r\n    \"username\": \"Cocinero\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
 							]
 						}
 					},

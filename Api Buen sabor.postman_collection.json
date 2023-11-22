@@ -469,7 +469,14 @@
 					"name": "Get All",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -534,10 +541,20 @@
 				{
 					"name": "Get One",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/articulos/insumos/5",
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -548,7 +565,7 @@
 								"v1",
 								"articulos",
 								"insumos",
-								"5"
+								"7"
 							]
 						}
 					},
@@ -557,6 +574,16 @@
 				{
 					"name": "Create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -567,7 +594,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"denominacion\": \"Queso Cheddar\",\r\n    \"descripcion\": \"Queso Cheddar de primera calidad\",\r\n    \"precioVenta\": 300.00,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 8\r\n    },\r\n    \"precioCompra\": 150.00,\r\n    \"stockActual\": 10,\r\n    \"stockMinimo\": 1,\r\n    \"unidadMedida\": {\r\n        \"id\": 3\r\n    },\r\n    \"Url_Imagen\": \"urlImagen..\"\r\n}\r\n"
+							"raw": "{\r\n        \"denominacion\": \"Queso Cheddar\",\r\n        \"descripcion\": \"Queso Cheddar de primera calidad\",\r\n        \"precioVenta\": 300.0,\r\n        \"estadoArticulo\": \"Alta\",\r\n        \"rubro\": {\r\n            \"id\": 8,\r\n            \"fechaAlta\": \"2023-11-10T10:27:52.839325\",\r\n            \"fechaBaja\": null,\r\n            \"fechaModificacion\": null,\r\n            \"denominacion\": \"Carnes\",\r\n            \"estadoRubro\": \"Alta\",\r\n            \"tipoRubro\": \"insumo\"\r\n        },\r\n        \"precioCompra\": 150.0,\r\n        \"stockActual\": 6,\r\n        \"stockMinimo\": 1,\r\n        \"unidadMedida\": {\r\n            \"id\": 2,\r\n            \"denominacion\": \"gramo\",\r\n            \"abreviatura\": \"g\"\r\n        },\r\n        \"url_Imagen\": null\r\n}\r\n"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/articulos/insumos",
@@ -589,6 +616,16 @@
 				{
 					"name": "Update",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -599,10 +636,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 5,\r\n    \"fechaAlta\": \"2023-11-10T10:25:39.853008\",\r\n    \"fechaBaja\": null,\r\n    \"fechaModificacion\": \"2023-11-10T10:38:31.753806\",\r\n    \"denominacion\": \"Lechuga\",\r\n    \"descripcion\": \"Lechuga Fresca\",\r\n    \"precioVenta\": 100.0,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 4\r\n    },\r\n    \"precioCompra\": 50.0,\r\n    \"stockActual\": 10,\r\n    \"stockMinimo\": 3,\r\n    \"unidadMedida\": {\r\n        \"id\": 2,\r\n        \"denominacion\": \"gramo\",\r\n        \"abreviatura\": \"g\"\r\n    },\r\n    \"url_Imagen\": null\r\n}"
+							"raw": "{\r\n    \"id\": 6,\r\n    \"fechaAlta\": \"2023-11-11T13:20:28.559814\",\r\n    \"fechaBaja\": null,\r\n    \"fechaModificacion\": null,\r\n    \"denominacion\": \"Queso Cheddar\",\r\n    \"descripcion\": \"Queso Cheddar de primera calidad\",\r\n    \"precioVenta\": 300.0,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 8,\r\n        \"fechaAlta\": \"2023-11-11T13:15:03.309121\",\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"denominacion\": \"Carnes\",\r\n        \"estadoRubro\": \"Alta\",\r\n        \"tipoRubro\": \"insumo\"\r\n    },\r\n    \"precioCompra\": 150.0,\r\n    \"stockActual\": 20,\r\n    \"stockMinimo\": 1,\r\n    \"unidadMedida\": {\r\n        \"id\": 2,\r\n        \"denominacion\": \"gramo\",\r\n        \"abreviatura\": \"g\"\r\n    },\r\n    \"url_Imagen\": null\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/articulos/insumos/3",
+							"raw": "http://localhost:8080/api/v1/articulos/insumos/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -613,7 +650,7 @@
 								"v1",
 								"articulos",
 								"insumos",
-								"3"
+								"6"
 							]
 						}
 					},
@@ -677,6 +714,16 @@
 				{
 					"name": "SearchSoldest",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -757,7 +804,14 @@
 					"name": "Get All",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -822,6 +876,16 @@
 				{
 					"name": "Get One",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -845,6 +909,16 @@
 				{
 					"name": "Create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -855,7 +929,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"denominacion\": \"Hamburguesa Doble\",\r\n    \"descripcion\": \"Hamburguesa con 2 medallon de carne, tomate, lechuga, mayonesa y cheddar\",\r\n    \"Url_Imagen\": \"string\",\r\n    \"precioVenta\": null,\r\n    \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 3\r\n    },\r\n    \"tiempoEstimadoCocina\": 25,\r\n    \"receta\": \"null\",\r\n    \"detallesArtManufacturado\": [\r\n        {\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 1\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 2,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 2\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 3\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 2,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 4\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 6\r\n            }\r\n        }\r\n    ]\r\n    \r\n    \r\n}\r\n"
+							"raw": "{\r\n        \"denominacion\": \"Hamburguesa Doble\",\r\n        \"descripcion\": \"Hamburguesa con 2 medallon de carne, tomate, lechuga, mayonesa y cheddar\",\r\n        \"precioVenta\": 3000.0,\r\n        \"estadoArticulo\": \"Alta\",\r\n    \"rubro\": {\r\n        \"id\": 3\r\n    },\r\n        \"tiempoEstimadoCocina\": 25,\r\n        \"receta\": \"null\",\r\n    \"detallesArtManufacturado\": [\r\n        {\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 1\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 2,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 2\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 3\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 2,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 4\r\n            }\r\n        },\r\n        {\r\n            \"cantidad\": 1,\r\n            \"articuloInsumo\":  {\r\n                \"id\": 6\r\n            }\r\n        }\r\n    ]\r\n    \r\n    \r\n}\r\n"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/articulos/manufacturados",
@@ -970,7 +1044,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnb256YUBnbWFpbC5jb20iLCJpYXQiOjE2OTk2MzQ1ODgsImV4cCI6MTY5OTYzNjAyOH0.UbQYjjm4PcNHfuXKlmMf74bVYX2N8n6pPNUbzYIsQKA",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -1127,10 +1201,20 @@
 				{
 					"name": "Get One",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/rubros/65",
+							"raw": "http://localhost:8080/api/v1/rubros/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1140,7 +1224,7 @@
 								"api",
 								"v1",
 								"rubros",
-								"65"
+								"7"
 							]
 						}
 					},
@@ -1149,6 +1233,16 @@
 				{
 					"name": "Create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -1159,7 +1253,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"denominacion\": \"Carnes\",\r\n    \"estadoRubro\": \"Alta\",\r\n    \"tipoRubro\": \"insumo\"\r\n}\r\n"
+							"raw": "{\r\n        \"denominacion\": \"Carnes\",\r\n        \"estadoRubro\": \"Alta\",\r\n        \"tipoRubro\": \"insumo\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/rubros",
@@ -1329,6 +1423,16 @@
 				{
 					"name": "Create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -1339,7 +1443,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"denominacion\": \"Unidad\",\r\n    \"abreviatura\": \"U\"\r\n}\r\n"
+							"raw": "{\r\n        \"denominacion\": \"Unidad\",\r\n        \"abreviatura\": \"U\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/unidadmedidas",
@@ -1718,6 +1822,16 @@
 				{
 					"name": "Create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -1728,7 +1842,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n\r\n  \"pagado\": \"Si\", \r\n\r\n  \"estadoPedido\": \"A_Confirmar\", \r\n\r\n  \"tipoEnvio\": \"retira\", \r\n\r\n  \"formaPago\": \"efectivo\", \r\n\r\n  \"persona\": { \r\n    \"id\": 1\r\n  }, \r\n\r\n  \"domicilio\": { \r\n    \"id\": 1 \r\n  }, \r\n\r\n  \"detallesPedido\": [ \r\n\r\n    {\r\n      \"cantidad\": 2,\r\n      \"articuloManufacturado\":{ \r\n         \"id\": 8\r\n      }\r\n    }\r\n    \r\n    // {\r\n    //   \"cantidad\": 1, \r\n    //   \"articuloInsumo\":{ \r\n    //      \"id\": 1\r\n    //   } \r\n\r\n    // }\r\n  ]\r\n\r\n} "
+							"raw": "{ \r\n\r\n  \"pagado\": \"Si\", \r\n\r\n  \"estadoPedido\": \"A_Confirmar\", \r\n\r\n  \"tipoEnvio\": \"retira\", \r\n\r\n  \"formaPago\": \"efectivo\", \r\n\r\n  \"persona\": { \r\n    \"id\": 129\r\n  }, \r\n\r\n  \"domicilio\": { \r\n    \"id\": 129 \r\n  }, \r\n\r\n  \"detallesPedido\": [ \r\n\r\n    {\r\n      \"cantidad\": 1,\r\n      \"articuloManufacturado\":{ \r\n         \"id\": 8\r\n      }\r\n    }\r\n    \r\n    // {\r\n    //   \"cantidad\": 1, \r\n    //   \"articuloInsumo\":{ \r\n    //      \"id\": 1\r\n    //   } \r\n\r\n    // }\r\n  ]\r\n\r\n} "
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/pedidos",
@@ -1816,7 +1930,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/pedidos/findByCliente/1?page=0&size=5",
+							"raw": "http://localhost:8080/api/v1/pedidos/findByCliente/129?page=0&size=5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1827,7 +1941,7 @@
 								"v1",
 								"pedidos",
 								"findByCliente",
-								"1"
+								"129"
 							],
 							"query": [
 								{
@@ -1851,6 +1965,16 @@
 				{
 					"name": "movimientosMonerios",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1929,7 +2053,14 @@
 					"name": "Get All",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -2098,7 +2229,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"Cliente\",\r\n    \"password\": \"password\",\r\n    \"nombre\": \"Cliente\",\r\n    \"apellido\": \"Cliente\",\r\n    \"telefono\": \"343523423\",\r\n    \"email\": \"Cliente\",\r\n    \"domicilios\": [\r\n    {\r\n      \"numero\": \"1234\",\r\n      \"calle\": \"calle\",\r\n      \"codigoPostal\": \"1234\",\r\n      \"nroDpt\": \"1\",\r\n      \"pisoDto\": \"1\",\r\n      \"localidad\": {\r\n        \"id\": 1,\r\n        \"nombreLocalidad\": \"Ciudad\"\r\n    }\r\n    }\r\n    ]\r\n\r\n}",
+							"raw": "{\r\n    \"username\": \"Cliente2\",\r\n    \"password\": \"password\",\r\n    \"nombre\": \"Cliente2\",\r\n    \"apellido\": \"Cliente2\",\r\n    \"telefono\": \"343523423\",\r\n    \"email\": \"Cliente2\",\r\n    \"domicilios\": [\r\n    {\r\n      \"numero\": \"1234\",\r\n      \"calle\": \"calle\",\r\n      \"codigoPostal\": \"1234\",\r\n      \"nroDpt\": \"1\",\r\n      \"pisoDto\": \"1\",\r\n      \"localidad\": {\r\n        \"id\": 1,\r\n        \"nombreLocalidad\": \"Ciudad\"\r\n    }\r\n    }\r\n    ]\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2142,7 +2273,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// {\r\n//     \"username\": \"Administrador\",\r\n//     \"password\": \"password\"\r\n// }\r\n// {\r\n//     \"username\": \"Cliente\",\r\n//     \"password\": \"password\"\r\n// }\r\n{\r\n    \"username\": \"Cocinero\",\r\n    \"password\": \"password\"\r\n}",
+							"raw": "{\r\n    \"username\": \"Administrador\",\r\n    \"password\": \"password\"\r\n}\r\n// {\r\n//     \"username\": \"Cliente\",\r\n//     \"password\": \"password\"\r\n// }\r\n// {\r\n//     \"username\": \"Cocinero\",\r\n//     \"password\": \"password\"\r\n// }",
 							"options": {
 								"raw": {
 									"language": "json"

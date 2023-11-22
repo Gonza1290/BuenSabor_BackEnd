@@ -62,6 +62,7 @@ public class SecurityConfig {
     private RequestMatcher authenticatedEndPoints(){
         return new OrRequestMatcher(
                 new AntPathRequestMatcher("/api/v1/pedidos/findByCliente/**"),
+                new AntPathRequestMatcher("/api/v1/pedidos"),
                 new AntPathRequestMatcher("/api/v1/facturas/{id}"),
                 new AntPathRequestMatcher("/api/v1/personas/searchByNombre/**"),
                 new AntPathRequestMatcher("/api/v1/personas/{id}")

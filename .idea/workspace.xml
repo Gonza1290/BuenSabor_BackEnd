@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="Spring security jws" />
+    <list default="true" id="8978e4ed-6e44-4fa7-bab1-73b80a431bac" name="Changes" comment="Spring security jws">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_11_42_[Changes]/myDB.mv.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_11_42_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_11_42__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/myDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/myDB.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tp_final/Config/SecurityConfig.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +117,7 @@
       <recent name="com.example.tp_final.Config" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ArticuloInsumoControllerTest.searchByDenominacion">
+  <component name="RunManager">
     <configuration name="ArticuloInsumoControllerTest.searchByDenominacion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -578,7 +585,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699974568467</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Spring security jws">
+      <option name="closed" value="true" />
+      <created>1700090697496</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1700090697496</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

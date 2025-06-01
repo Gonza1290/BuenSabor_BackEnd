@@ -72,29 +72,6 @@ API REST para el sistema de delivery **"El Buen Sabor"**, desarrollada con **Spr
 | `GET`    | `/api/v1/localidades`         | Listar localidades.                  |  
 | `POST`   | `/api/v1/localidades`         | Crear localidad.                     |  
 
----
-
-## **⚙️ Configuración**  
-
-### **Variables de Entorno**  
-```env  
-# Base de Datos  
-DB_URL=jdbc:mysql://localhost:3306/elbuensabor  
-DB_USER=root  
-DB_PASSWORD=1234  
-
-# JWT  
-JWT_SECRET=mi_clave_secreta  
-
-# Email (para facturas)  
-EMAIL_USER=correo@gmail.com  
-EMAIL_PASS=password  
-```  
-
-### **Ejecución**  
-```bash  
-mvn spring-boot:run  
-```  
 
 ---
 
